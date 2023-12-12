@@ -31,6 +31,7 @@
 %**
 
 \usepackage{bibentry}
+\usepackage{makecell}
 \nobibliography*
 
 \bibliographystyle{my_plain}
@@ -40,14 +41,14 @@
 \newcommand{\myref}[1]{\iftoggle{myrefs}{\textbf{#1}}{#1}}
 
 \name{Thibaud}{Lasguignes}
-\title{Docteur en robotique humano\"ide et perception}            % optional, remove / comment the line if not wanted
-\address{4 All\'ee Elise Deroche}{31400 Toulouse}{} % optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\title{Docteur en robotique humano\"ide et vision par ordinateur}            % optional, remove / comment the line if not wanted
+\address{4 All\'ee Elise Deroche}{R\'esidence Lindbergh, G1-407}{31400 Toulouse} % optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
 \phone[mobile]{+33~(6)~26~36~28~13}                  % optional, remove / comment the line if not wanted
 % \phone[fixed]{+2~(345)~678~901}                    % optional, remove / comment the line if not wanted
 % \phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
 \email{thibaud.lasguignes@sfr.fr}                  % optional, remove / comment the line if not wanted
+\social[github]{TLasguignes}
 % \homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
-\extrainfo{27 ans -- Permis B}                       % optional, remove / comment the line if not wanted
 %\photo[5cm]{../figures/DSC00009.jpeg}                % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 % \quote{Some quote}                                 % optional, remove / comment the line if not wanted
 
@@ -73,78 +74,85 @@
 \vspace*{-1cm}
 
 \section{Formations}
-\cventry{2023}{Doctorat en Robotique Humano\"ide et vision par ordinateur}
-{LAAS-CNRS, \`a~Toulouse (31)}
-{INSA de Toulouse}
+\cventry{2023}{Doctorat en Robotique}
+{INSA de Toulouse et LAAS-CNRS, \`a~Toulouse (31)}
+{"Reconnaissance d'objets visant \`a la locomotion et \`a la manipulation par un robot humano\"ide dans un environnement industriel"}
 {supervis\'e par Olivier Stasse}
-{"Reconnaissance d'objets visant à la locomotion et \`a la manipulation par un robot humano\"ide dans un environnement industriel".}
+{
+  Soutenue le 31 Ao\^ut 2023 devant le jury compos\'e de :\\
+  \renewcommand{\arraystretch}{2}
+  \begin{tabular}{l@{\hskip .5in}l@{\hskip .5in}l}
+    Olivier Aycard         & \makecell{Ma\^itre de Conf\'erence\\Universit\'e Grenoble Alpes} & Rapporteur              \\
+    David Filliat          & \makecell{Professeur\\ENSTA Paris}                               & Président et Rapporteur \\
+    Jean-Emmanuel Deschaud & \makecell{Charg\'e de Recherche\\Mines Paris}                    & Examinateur             \\
+    Ariane Herbulot        & \makecell{Ma\^itre de Conf\'erence\\Universit\'e Paul Sabatier}  & Examinateur             \\
+    Nicolas Mansard        & \makecell{Directeur de Recherche\\LAAS-CNRS}                     & Examinateur             \\
+    Olivier Stasse         & \makecell{Directeur de Recherche\\LAAS-CNRS}                     & Directeur de Thèse      \\
+  \end{tabular}
+}% {Ces travaux sont men\'es dans le cadre de ROB4FAM, un laboratoire commun entre AIRBUS et le LAAS-CNRS.
+% L'objectif est de d\'evelopper et/ou appliquer des syst\`emes utilisant des informations extraites de LiDAR ou de cam\'eras RGB-D pour reconna\^itre son environnement, afin d'am\'eliorer l'autonomie des robots dans un milieu industriel.
+% Dans l'hypoth\`ese o\`u des connaissances a priori de l'environnement (carte de l'environnement, mod\`ele des objets d'int\'er\^et) sont fournies, les travaux s'axent sur deux probl\`emes: se localiser dans l'environnement et localiser les objets utiles qu'ils soient proches ou \'eloign\'es.
+% Ces recherches se basent sur l'utilisation de m\'ethodes de r\'ealignement de nuages de points, de type \emph{Iterative Closest Point}, et de descripteurs permettant d'estimer des correspondances entre nos connaissances et les mesures.
+% }
+%
 \cventry{2019}{Dipl\^ome d'ing\'enieur INSA, Sp\'ecialit\'e Automatique Electronique}
-{INSA de Toulouse (31)}{}{}{orient\'e Syst\`emes Informatiques Embarqu\'es Critiques}
+{INSA de Toulouse (31)}{orient\'e Syst\`emes Informatiques Embarqu\'es Critiques}{}{"Reconnaissance et localisation d’objets par vision embarqu\'ee (cam\'eras RGB ou RGB-D) sur un robot humano\"ide pour des t\^aches de vissage et de per\c cage", supervis\'e par Olivier Stasse au LAAS-CNRS}
 %
 \cventry{2016}{DUT G\'enie Electrique et Informatique Industrielle}{IUT `A' Paul Sabatier}{\`a Toulouse (31)}{(major)}{}%
 %
+\cventry{2014}{Baccalauréat Scientifique option mathématiques}{Lycée Général et Technologique Jean-Fran\c cois Champollion}{\`a Figeac (46)}{(mention Bien)}{}%
+%
 \vspace*{0.5cm}
-\cventry{Langue}{Français}{langue maternelle}{}{}{}
+\cventry{Langues}{Français}{langue maternelle}{}{}{}
 \cventry{}{Anglais}{lu, \'ecrit, parl\'e}{}{}{}
 %
 \cventry{Informatique}{Logiciels}{cmake, git, ROS, PCL, Open3D}{}{}{}
 %
 \cventry{}{Langage}{C/C++, python, bash, Matlab, VHDL, Langage d'assemblage, LADDER}{}{}{}
 
-
-
-\section{Exp\'erience professionnelle}
+\section{Exp\'eriences Professionnelles}
 \cventry{Depuis 2023}{Attach\'e Temporaire d'Enseignement et de Recherche}{Institut National des Sciences Appliqu\'ees de Toulouse (31)}{}{}
 {
 R\'ealisation d'enseignement au sein du d\'epartement de G\'enie \'Electrique et Informatique de l'INSA Toulouse sur un total de 192h \'equivalent TD.
-\begin{itemize}
-  \item Travaux Pratiques: D\'eveloppement de Syst\`emes Temps R\'eel (niveau M1)
-  \item Travaux Pratiques avec Projet: Mise en place de notions de programmation orient\'ee object, langage C++ (niveau M1)
-  \item Travaux Dirig\'es et Travaux Pratiques: Mise en place de notions de programmation Langage C (niveau L3)
-  \item Travaux Dirig\'es et Travaux Pratiques: Algorithmique et programmation ADA (niveau L1 et L2)
-  \item Cours, Travaux Dirig\'es et Travaux Pratiques: Mise en place de notions de programmation Python (niveau L1)
-\end{itemize}
+% \begin{itemize}
+  % \item Travaux Pratiques: D\'eveloppement de Syst\`emes Temps R\'eel (niveau M1)
+  % \item Travaux Pratiques avec Projet: Mise en place de notions de programmation orient\'ee object, langage C++ (niveau M1)
+  % \item Travaux Dirig\'es et Travaux Pratiques: Mise en place de notions de programmation Langage C (niveau L3)
+  % \item Travaux Dirig\'es et Travaux Pratiques: Algorithmique et programmation ADA (niveau L1 et L2)
+  % \item Cours, Travaux Dirig\'es et Travaux Pratiques: Mise en place de notions de programmation Python (niveau L1)
+% \end{itemize}
 }
 \cventry{2022 -- 2023}{Attach\'e Temporaire d'Enseignement et de Recherche}{Universit\'e Toulouse III Paul Sabatier (31)}{}{}
 {
 R\'ealisation d'enseignement au sein du d\'epartement Electronique, Energie \'electrique et Automatique de la Facult\'e Sciences et Ing\'enierie sur un total de 192h \'equivalent TD.
-\begin{itemize}
-  \item Travaux Pratiques: Robotique Mobile et utilisation de ROS (niveau M2)
-  \item Cours, Travaux Dirig\'es et Travaux Pratiques: Syst\`eme Temps R\'eel (UPSSITECH, niveau M1)
-  \item Travaux Pratiques: Mise en place de notions de programmation Langage C (niveau M1)
-  \item Cours: Programmation Multithread et ex\'ecution concurrente (niveau M1)
-  \item Travaux Pratiques: Mise en oeuvre de Syst\`emes \`a Ev\`enements Discrets (niveau M1)
-  \item Travaux Pratiques: Automatique \`a Ev\`enements Discrets (niveau L2 et L3)
-  \item Travaux Pratiques: Informatique Industrielle (niveau L2)
-  \item Travaux Pratiques: Base de l'architecture et des syst\`emes (logique, niveau L1)
-\end{itemize}
+% \begin{itemize}
+  % \item Travaux Pratiques: Robotique Mobile et utilisation de ROS (niveau M2)
+  % \item Cours, Travaux Dirig\'es et Travaux Pratiques: Syst\`eme Temps R\'eel (UPSSITECH, niveau M1)
+  % \item Travaux Pratiques: Mise en place de notions de programmation Langage C (niveau M1)
+  % \item Cours: Programmation Multithread et ex\'ecution concurrente (niveau M1)
+  % \item Travaux Pratiques: Mise en oeuvre de Syst\`emes \`a Ev\`enements Discrets (niveau M1)
+  % \item Travaux Pratiques: Automatique \`a Ev\`enements Discrets (niveau L2 et L3)
+  % \item Travaux Pratiques: Informatique Industrielle (niveau L2)
+  % \item Travaux Pratiques: Base de l'architecture et des syst\`emes (logique, niveau L1)
+% \end{itemize}
 }
-\cventry{2019 -- 2023}{Doctorant}{LAAS-CNRS}{Toulouse (31)}
-{"Reconnaissance et localisation d'objets visant \`a la locomotion et la manipulation par un robot humano\"ide"}
-{Ces travaux sont men\'es dans le cadre de ROB4FAM, un laboratoire commun entre AIRBUS et le LAAS-CNRS.
-L'objectif est de d\'evelopper et/ou appliquer des syst\`emes utilisant des informations extraites de LiDAR ou de cam\'eras RGB-D pour reconna\^itre son environnement, afin d'am\'eliorer l'autonomie des robots dans un milieu industriel.
-Dans l'hypoth\`ese o\`u des connaissances a priori de l'environnement (carte de l'environnement, mod\`ele des objets d'int\'er\^et) sont fournies, les travaux s'axent sur deux probl\`emes: se localiser dans l'environnement et localiser les objets utiles qu'ils soient proches ou \'eloign\'es.
-Ces recherches se basent sur l'utilisation de m\'ethodes de r\'ealignement de nuages de points, de type \emph{Iterative Closest Point}, et de descripteurs permettant d'estimer des correspondances entre nos connaissances et les mesures.
-}
-%
 \cventry{2019 -- 2021}{Doctorant Contractuel Charg\'e d'Enseignement}{INSA de Toulouse (31)}{}
 {}{
   R\'ealisation d'enseignements au sein du d\'epartement G\'enie Electrique et Informatique de l'Institut National des Sciences Appliqu\'ees de Toulouse sur deux ans, soit sur un total de 128 heures.
-  \begin{itemize}
-    \item Travaux Pratiques: Mise en place des notions de programmation Langage C (2\`eme et 3\`eme ann\'ees)
-    \item Travaux Pratiques: D\'eveloppement d'un syst\`eme Temps R\'eel pour la gestion du d\'eplacement d'une base mobile dans une ar\`ene (4\`eme ann\'ee)
-    \item Travaux Pratiques: Mise en place de notions sur les ``Syst\`emes de commande logique'' (2\`eme ann\'ee)
-    \item Travaux Pratiques: D\'eveloppement d'un syst\`eme sur micro-contr\^oleur pour le contr\^ole d'un voilier (3\`eme ann\'ee)
-    \item Travaux Pratiques: Dimensionnement et montage d'un pr\'e-amplificateur \`a transistors bipolaires (3\`eme ann\'ee)
-    \item Travaux Pratiques: Montage de circuits \`a base d'Amplificateurs Op\'erationnels (2\`eme ann\'ee)
-  \end{itemize}
+  % \begin{itemize}
+  %   \item Travaux Pratiques: Mise en place des notions de programmation Langage C (2\`eme et 3\`eme ann\'ees)
+  %   \item Travaux Pratiques: D\'eveloppement d'un syst\`eme Temps R\'eel pour la gestion du d\'eplacement d'une base mobile dans une ar\`ene (4\`eme ann\'ee)
+  %   \item Travaux Pratiques: Mise en place de notions sur les ``Syst\`emes de commande logique'' (2\`eme ann\'ee)
+  %   \item Travaux Pratiques: D\'eveloppement d'un syst\`eme sur micro-contr\^oleur pour le contr\^ole d'un voilier (3\`eme ann\'ee)
+  %   \item Travaux Pratiques: Dimensionnement et montage d'un pr\'e-amplificateur \`a transistors bipolaires (3\`eme ann\'ee)
+  %   \item Travaux Pratiques: Montage de circuits \`a base d'Amplificateurs Op\'erationnels (2\`eme ann\'ee)
+  % \end{itemize}
 }
 %
 \cventry{2019}{Stagiaire}{LAAS-CNRS}{Toulouse (31)}
 {"Reconnaissance et localisation d'objets par vision embarqu\'ee sur un robot humano\"ide"}{
-  Ces travaux concernent la localisation d'objets en utilisant des cam\'eras RGB-D.
-Les objets sont suppos\'es pos\'es sur une table et leurs mod\`eles sont connus.
-L'objectif est donc de pouvoir fournir \`a un robot la pose de l'objet \`a manipuler en utilisant des m\'ethodes de r\'ealignement de nuages de points.
+  Localisation d'objets en utilisant des cam\'eras RGB-D, pour fournir \`a un robot la pose de l'objet \`a manipuler en utilisant des m\'ethodes de r\'ealignement de nuages de points.
+Objets suppos\'es pos\'es sur une table et leurs mod\`eles connus.
 }
 %
 \cventry{2018}{Stagiaire}{Technology and Strategy}{Munich, Allemagne}
@@ -157,15 +165,12 @@ L'objectif est donc de pouvoir fournir \`a un robot la pose de l'objet \`a manip
 }
 
 \section{Publications Scientifiques}
-
 % Underline my name
 \toggletrue{myrefs}
-
-\large{\underline{Articles :}}
-
+\large{\underline{Articles} :}
 \begin{itemize}%
-\normalsize{\item[[1]\hspace{-2mm}]} \normalsize{\bibentry{lasguignes:icar:2021}}
-\normalsize{\item[[2]\hspace{-2mm}]} \normalsize{\bibentry{lasguignes:irc:2023}}
+\normalsize{\item[[1]\hspace{-2mm}]} \normalsize{\bibentry{lasguignes:irc:2023}}
+\normalsize{\item[[2]\hspace{-2mm}]} \normalsize{\bibentry{lasguignes:icar:2021}}
 \end{itemize}
 
 \newsavebox\mytempbib
@@ -175,7 +180,7 @@ L'objectif est donc de pouvoir fournir \`a un robot la pose de l'objet \`a manip
 %\subsection{In submission}
 
 \section{Activit\'es  \'Editoriales}
-\large{\underline{Revues d'articles scientifiques :}}
+\large{\underline{Revues d'articles scientifiques} :}
 \begin{itemize}%
 \items IJRR, IEEE T-RO, IEEE RA-L, ICRA, IROS, Humanoids.
 \end{itemize}
