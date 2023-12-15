@@ -31,10 +31,36 @@
 %**
 
 \usepackage{bibentry}
-\usepackage{makecell}
+\usepackage{makecell}                               % for multiline cells
+\usepackage{wrapfig}                                % for wraping figures
 \nobibliography*
 
 \bibliographystyle{my_plain}
+
+\usepackage{enumitem}
+\usepackage{scrextend}
+\setlist{nolistsep}
+
+% A custom version of the \cventry command that supports large itemized lists
+% inside argument #7 (the custom cvitemize lists should be used!)
+\newcommand*{\cventrylong}[7][.25em]{%
+  \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+    \raggedleft\hintstyle{#2} &{%
+        {\bfseries#3}%
+        \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}%
+        \ifthenelse{\equal{#5}{}}{}{, #5}%
+        \ifthenelse{\equal{#6}{}}{}{, #6}%
+    }%
+  \end{tabular}%
+  \begin{addmargin}[\hintscolumnwidth+\separatorcolumnwidth]{0em}%
+    {\small#7}%
+  \end{addmargin}%
+  \par\addvspace{#1}}
+% A custom version of the itemize environment that sets the appropriate left
+% margin for use inside \cventylong
+\newlist{cvitemize}{itemize}{1}
+\setlist[cvitemize]{label=\labelitemi,%
+leftmargin=\hintscolumnwidth+\separatorcolumnwidth+\labelwidth+\labelsep}
 
 \usepackage{etoolbox}
 \newtoggle{myrefs}
@@ -43,14 +69,14 @@
 \name{Thibaud}{Lasguignes}
 \title{Docteur en robotique humano\"ide et vision par ordinateur}            % optional, remove / comment the line if not wanted
 \address{4 All\'ee Elise Deroche}{R\'esidence Lindbergh, G1-407}{31400 Toulouse} % optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
-\phone[mobile]{+33~(6)~26~36~28~13}                  % optional, remove / comment the line if not wanted
-% \phone[fixed]{+2~(345)~678~901}                    % optional, remove / comment the line if not wanted
-% \phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
-\email{thibaud.lasguignes@sfr.fr}                  % optional, remove / comment the line if not wanted
+\phone[mobile]{+33~(6)~26~36~28~13}                   % optional, remove / comment the line if not wanted
+% \phone[fixed]{+2~(345)~678~901}                     % optional, remove / comment the line if not wanted
+% \phone[fax]{+3~(456)~789~012}                       % optional, remove / comment the line if not wanted
+\email{thibaud.lasguignes@sfr.fr}                     % optional, remove / comment the line if not wanted
 \social[github]{TLasguignes}
-% \homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
+% \homepage{www.johndoe.com}                          % optional, remove / comment the line if not wanted
 %\photo[5cm]{../figures/DSC00009.jpeg}                % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-% \quote{Some quote}                                 % optional, remove / comment the line if not wanted
+% \quote{Some quote}                                  % optional, remove / comment the line if not wanted
 
 \newcommand{\items}{\item \hspace{2mm}}
 
@@ -92,11 +118,6 @@
     Olivier Stasse         & \makecell{Directeur de Recherche\\LAAS-CNRS}                     & Directeur de Th\`ese      \\
   \end{tabular}
 }
-% {Ces travaux sont men\'es dans le cadre de ROB4FAM, un laboratoire commun entre AIRBUS et le LAAS-CNRS.
-% L'objectif est de d\'evelopper et/ou appliquer des syst\`emes utilisant des informations extraites de LiDAR ou de cam\'eras RGB-D pour reconna\^itre son environnement, afin d'am\'eliorer l'autonomie des robots dans un milieu industriel.
-% Dans l'hypoth\`ese o\`u des connaissances a priori de l'environnement (carte de l'environnement, mod\`ele des objets d'int\'er\^et) sont fournies, les travaux s'axent sur deux probl\`emes: se localiser dans l'environnement et localiser les objets utiles qu'ils soient proches ou \'eloign\'es.
-% Ces recherches se basent sur l'utilisation de m\'ethodes de r\'ealignement de nuages de points, de type \emph{Iterative Closest Point}, et de descripteurs permettant d'estimer des correspondances entre nos connaissances et les mesures.
-% }
 %
 \cventry
 {2019}
@@ -136,7 +157,7 @@
 \cventry
 {}
 {Anglais}
-{lu, \'ecrit, parl\'e}
+{Niveau B2}
 {}
 {}
 {}
@@ -166,13 +187,6 @@
 {}
 {
   R\'ealisation d'enseignement au sein du d\'epartement de G\'enie Electrique et Informatique de l'INSA Toulouse sur un total de 192h \'equivalent TD.
-% \begin{itemize}
-  % \item Travaux Pratiques: D\'eveloppement de Syst\`emes Temps R\'eel (niveau M1)
-  % \item Travaux Pratiques avec Projet: Mise en place de notions de programmation orient\'ee object, langage C++ (niveau M1)
-  % \item Travaux Dirig\'es et Travaux Pratiques: Mise en place de notions de programmation Langage C (niveau L3)
-  % \item Travaux Dirig\'es et Travaux Pratiques: Algorithmique et programmation ADA (niveau L1 et L2)
-  % \item Cours, Travaux Dirig\'es et Travaux Pratiques: Mise en place de notions de programmation Python (niveau L1)
-% \end{itemize}
 }
 %
 \cventry
@@ -183,16 +197,6 @@
 {}
 {
   R\'ealisation d'enseignement au sein du d\'epartement Electronique, Energie \'electrique et Automatique de la Facult\'e Sciences et Ing\'enierie sur un total de 192h \'equivalent TD.
-% \begin{itemize}
-  % \item Travaux Pratiques: Robotique Mobile et utilisation de ROS (niveau M2)
-  % \item Cours, Travaux Dirig\'es et Travaux Pratiques: Syst\`eme Temps R\'eel (UPSSITECH, niveau M1)
-  % \item Travaux Pratiques: Mise en place de notions de programmation Langage C (niveau M1)
-  % \item Cours: Programmation Multithread et ex\'ecution concurrente (niveau M1)
-  % \item Travaux Pratiques: Mise en oeuvre de Syst\`emes \`a Ev\`enements Discrets (niveau M1)
-  % \item Travaux Pratiques: Automatique \`a Ev\`enements Discrets (niveau L2 et L3)
-  % \item Travaux Pratiques: Informatique Industrielle (niveau L2)
-  % \item Travaux Pratiques: Base de l'architecture et des syst\`emes (logique, niveau L1)
-% \end{itemize}
 }
 %
 \cventry
@@ -203,14 +207,6 @@
 {}
 {
   R\'ealisation d'enseignements au sein du d\'epartement G\'enie Electrique et Informatique de l'Institut National des Sciences Appliqu\'ees de Toulouse sur deux ans, soit sur un total de 128 heures.
-  % \begin{itemize}
-  %   \item Travaux Pratiques: Mise en place des notions de programmation Langage C (2\`eme et 3\`eme ann\'ees)
-  %   \item Travaux Pratiques: D\'eveloppement d'un syst\`eme Temps R\'eel pour la gestion du d\'eplacement d'une base mobile dans une ar\`ene (4\`eme ann\'ee)
-  %   \item Travaux Pratiques: Mise en place de notions sur les ``Syst\`emes de commande logique'' (2\`eme ann\'ee)
-  %   \item Travaux Pratiques: D\'eveloppement d'un syst\`eme sur micro-contr\^oleur pour le contr\^ole d'un voilier (3\`eme ann\'ee)
-  %   \item Travaux Pratiques: Dimensionnement et montage d'un pr\'e-amplificateur \`a transistors bipolaires (3\`eme ann\'ee)
-  %   \item Travaux Pratiques: Montage de circuits \`a base d'Amplificateurs Op\'erationnels (2\`eme ann\'ee)
-  % \end{itemize}
 }
 %
 \cventry
@@ -248,41 +244,40 @@
 %
 
 \section{Activit\'es d'Enseignement}
-\cventry
+\cventrylong
 {Depuis 2023}
 {Attach\'e Temporaire d'Enseignement et de Recherche}
 {Institut National des Sciences Appliqu\'ees de Toulouse (31)}
 {D\'epartement de G\'enie Electrique et Informatique}
 {}
 {
-  \textbf{Syst\`emes Temps R\'eel}\\
-  Enseignement de 22h en TP pour les 4\`eme ann\'ee AE.\\
+  \textbf{Syst\`emes Temps R\'eel} (D\'ebut 2024)\\
+  Enseignement de 22h en TP pour les 4e ann\'ee AE.\\
   L'objectif est de donner aux \'etudiants les notions de Syst\`emes Temps R\'eel.
-  Les \'etudiants apprennent \`a mettre en place les notions vues en cours \`a travers la gestion de la communication avec une base mobile dont le contr\^ole a \'et\'e fourni int\'egrant des contraintes temps r\'eel sur les ordres reçus.
-  \\
+  Les \'etudiants apprennent \`a mettre en place les notions vues en cours \`a travers la gestion de la communication avec une base mobile dont le contr\^ole a \'et\'e fourni int\'egrant des contraintes temps r\'eel sur les ordres re\c cus.\\
   %
   \textbf{Programmation Orient\'ee Objets}\\
-  Enseignement de 19,25h en TP pour les 4\`eme ann\'ee AE-SE.\\
+  Enseignement de 19,25h en TP pour les 4e ann\'ee AE-SE.\\
   L'objectif est de donner des notions de programmation orient\'ee objets en langage C++ \`a travers des exercices guid\'es et un projet.
-  Les \'etudiants sont d'abord ammen\'es \`a \'etudier les diff\'erentes notions des objets \`a travers la cr\'eation de classe, l'h\'eritage et le polymorphisme.
-  Par la suite, ils leur est demand\'e de r\'ealiser le projet de leur choix autour d'un microcontr\^oleur ESP8266 et de diff\'erents capteurs et actionneurs dont ils ont besoin, en mettant en place les notions vues en cours pour structurer leur programme.\\
+  Les \'etudiants sont d'abord amen\'es \`a \'etudier les diff\'erentes notions des objets \`a travers la cr\'eation de classe, l'h\'eritage et le polymorphisme.
+  Par la suite, il leur est demand\'e de r\'ealiser le projet de leur choix autour d'un microcontr\^oleur ESP8266 et de diff\'erents capteurs et actionneurs dont ils ont besoin, en mettant en place les notions vues en cours pour structurer leur programme.\\
   %
   \textbf{Programmation langage C}\\
-  Enseignement de 6,25h en TD et 11h en TP pour les 3\`eme ann\'ee IMACS.\\
+  Enseignement de 6,25h en TD et 11h en TP pour les 3e ann\'ee IMACS.\\
   L'objectif est de mettre en place les notions de programmation en langage C.
-  Les \'etudiants sont ammen\'es \`a \'ecrire des programmes permettant de d\'ecouvrir les diff\'erentes notions et syntaxes du C.\\
+  Les \'etudiants sont amen\'es \`a \'ecrire des programmes permettant de d\'ecouvrir les diff\'erentes notions et syntaxes du C.\\
   %
   \textbf{Algorithmique et programmation ADA}\\
   Enseignement de 51,25h en TD et 43,5h en TP pour les 1\`ere et 2\`eme ann\'ee.\\
   L'objectif est de donner des notions de d\'eveloppement d'algorithme et de r\'ealisation en programmation ADA.\\
   %
-  \textbf{Algorithmique et programmation Python}\\
+  \textbf{Algorithmique et programmation Python} (D\'ebut 2024)\\
   Enseignement de 3,75h en CM, 2,5h en TD et 30,25h en TP pour les 2\`eme ann\'ee FAS.\\
   L'objectif est de donner les notions de programmation et d'algorithmique aux \'etudiants \`a travers du d\'eveloppement en python.\\
   %
 }
 %
-\cventry
+\cventrylong
 {2022 -- 2023}
 {Attach\'e Temporaire d'Enseignement et de Recherche}
 {Universit\'e Paul Sabatier Toulouse III (31)}
@@ -298,14 +293,14 @@
   \textbf{Techniques et Impl\'ementation de M\'ethodes Num\'eriques}\\
   Enseignement de 58h en TP pour les Master 1 du d\'epartement EEA.\\
   L'objectif \'etait d'apprendre la programmation en langage C en d\'eveloppant des codes appliquant des m\'ethodes num\'eriques.
-  Les \'etudiants d\'eveloppaient en C des programmes allant de la r\'esolution d'\'equation du second degr\`es aux int\'egrations par parties et interpolations lin\'eaires.\\
+  Les \'etudiants d\'eveloppaient en C des programmes allant de la r\'esolution d'\'equation du second degr\'e aux int\'egrations par parties et interpolations lin\'eaires.\\
   %
   \textbf{Outils pour la Commande de Syst\`emes Parall\`eles}\\
   Enseignement de 10h en CM pour les Master 1 ISTR-AURO.\\
-  L'objectif \'etait de donner aux \'etudiants les notions n\'ecessaire \`a la programmation parall\`eles en langage C.
-  Les notions \'etudi\'ees allaient de la th\'eorie des processus et de la programation concurrente au partage de ressource et de donn\'ees.
+  L'objectif \'etait de donner aux \'etudiants les notions n\'ecessaires \`a la programmation parall\`eles en langage C.
+  Les notions \'etudi\'ees allaient de la th\'eorie des processus et de la programmation concurrente au partage de ressource et de donn\'ees.
   Les explications se voulaient g\'en\'eriques et utilisaient la librairie \emph{pthread} pour donner des exemples.
-  Les \'etudiants ont ensuite \'et\'e ammen\'es en TD et en TP \`a \'etudier diff\'erent probl\`emes de partage de ressource et \`a mettre en place des solutions adapt\'ees en utilisant les notions vues en cours.\\
+  Les \'etudiants ont ensuite \'et\'e amen\'es en TD et en TP \`a \'etudier diff\'erents probl\`emes de partage de ressource et \`a mettre en place des solutions adapt\'ees en utilisant les notions vues en cours.\\
   %
   \textbf{Syst\`emes Temps R\'eel}\\
   Enseignement de 8h en CM, 10h en TD et 24h en TP pour les 2\`eme ann\'ee SRI \`a l'UPSSITECH.\\
@@ -315,31 +310,31 @@
   %
   \textbf{Techniques de Mises en \OE uvre pour les Syst\`emes \`a Ev\`enements Discrets}\\
   Enseignement de 18h en TP pour les Master 1 ISTR-AURO.\\
-  L'objectif \'etait de d\'evelopper les notions de mise en \oe uvre de syst\`emes \`a evenements distrets en partant d'une mod\'elisation pour aller sur la programmation.
-  Les \'etudiants \'etaient ammen\'es \`a analyser un cahier des charges, mod\'eliser une commande r\'epondant et programmer la mod\'elisation en langage ST, IL, C ou VHDL selon la m\'ethode et la plateforme.
-  Les \'etudiants ont ensuite dû d\'evelopper en C un syst\`eme automatisant le proc\'ed\'e de programation.
+  L'objectif \'etait de d\'evelopper les notions de mise en \oe uvre de syst\`emes \`a \'ev\'enements discrets en partant d'une mod\'elisation pour aller sur la programmation.
+  Les \'etudiants \'etaient amen\'es \`a analyser un cahier des charges, mod\'eliser une commande r\'epondant et programmer la mod\'elisation en langage ST, IL, C ou VHDL selon la m\'ethode et la plateforme.
+  Les \'etudiants ont ensuite d\^u d\'evelopper en C un syst\`eme automatisant le proc\'ed\'e de programmation.
   Leurs programmes devaient r\'ecup\'erer les informations de la commande et \'ecrire le code n\'ecessaire \`a la mise en place du syst\`eme dans un langage d\'efini.\\
   %
   \textbf{Automatique \`a Evenements Discrets}\\
   Enseignement de 60h en TP pour les Licence 3 du d\'epartement EEA.\\
-  L'objectif \'etait de mettre en place les notions d'automatique \`a \'ev\`enement discrets en d\'eveloppement les sch\'emas de controle de diff\'erents m\'ecanismes en utilisant des outils de mod\'elisation \`a base de r\'eseaux de P\'etri, de machines \`a \'etat ou de GRAFCET.
-  Les \'etudiants devaient analyser un cahier des charges li\'es \`a une maquette de manipulation et mod\'eliser le sch\'ema de contr\^ole \`a mettre en place.
-  Ils devaient ensuite coder leur mod\'elisation selon diff\'erentes mises en places dans un langage d\'ependant de la maquette, ST ou IL pour un automate programmable, C pour un microcontr\^oleur ou VHDL pour un FPGA.\\
+  L'objectif \'etait de mettre en place les notions d'automatique \`a \'ev\'enements discrets en d\'eveloppement les sch\'emas de contr\^ole de diff\'erents m\'ecanismes en utilisant des outils de mod\'elisation \`a base de r\'eseaux de P\'etri, de machines \`a \'etat ou de GRAFCET.
+  Les \'etudiants devaient analyser un cahier des charges li\'e \`a une maquette de manipulation et mod\'eliser le sch\'ema de contr\^ole \`a mettre en place.
+  Ils devaient ensuite coder leur mod\'elisation selon diff\'erentes mises en place dans un langage d\'ependant de la maquette, ST ou IL pour un automate programmable, C pour un microcontr\^oleur ou VHDL pour un FPGA.\\
   %
   \textbf{Informatique Industrielle}\\
   Enseignement de 6h en TP pour les Licence 2 du d\'epartement EEA.\\
   L'objectif \'etait de mettre en place des notions d'informatique \`a travers l'analyse du codage des informations, le traitement de signaux binaires et num\'eriques et l'utilisation de ports d'entr\'ee et de sortie num\'eriques et analogiques.
   Les \'etudiants codaient en C des programmes permettant d'observer la diff\'erence de codage et d'interpr\'etation des informations num\'eriques.
-  Ils d\'eveloppaient aussi des programmes permettant de r\'ecup\'erer et rendre des informations \`a travers des ports d'entr\'ees et de sorties binaires et analogiques.\\
+  Ils d\'eveloppaient aussi des programmes permettant de r\'ecup\'erer et de rendre des informations \`a travers des ports d'entr\'ees et de sorties binaires et analogiques.\\
   %
   \textbf{Base de l'architecture et des syst\`emes}\\
   Enseignement de 24h en TP pour les Licence 1 Informatique.\\
   L'objectif \'etait de donner aux \'etudiants des notions de logique binaire et combinatoire.
   Les \'etudiants devaient r\'ealiser des circuits logiques pour r\'ealiser diff\'erentes t\^aches.
-  Ils devaient analyser le lien entre les entr\'ees, les \'etats du syst\`eme et les sorties afin de trouver les table de v\'erit\'es et de d\'eduire les \'equations logiques pour r\'ealiser les circuits en simulation.
+  Ils devaient analyser le lien entre les entr\'ees, les \'etats du syst\`eme et les sorties afin de trouver les tables de v\'erit\'e et de d\'eduire les \'equations logiques pour r\'ealiser les circuits en simulation.
 }
 %
-\cventry
+\cventrylong
 {2019 -- 2021}
 {Doctorant Contractuel Charg\'e d'Enseignement}
 {Institut National des Sciences Appliqu\'ees de Toulouse (31)}
@@ -347,49 +342,123 @@
 {}
 {
   \textbf{Syst\`emes Temps R\'eel}\\
-  Enseignement de 27,5h en TP pour les 4\`eme ann\'ee AE-SE.\\
+  Enseignement de 27,5h en TP pour les 4e ann\'ee AE-SE.\\
   L'objectif est de donner aux \'etudiants les notions de Syst\`emes Temps R\'eel.
-  Les \'etudiants apprennent \`a mettre en place les notions vues en cours \`a travers la gestion de la communication avec une base mobile dont le contr\^ole a \'et\'e fourni int\'egrant des contraintes temps r\'eel sur les ordres reçus.\\
+  Les \'etudiants apprennent \`a mettre en place les notions vues en cours \`a travers la gestion de la communication avec une base mobile dont le contr\^ole a \'et\'e fourni int\'egrant des contraintes temps r\'eel sur les ordres re\c cus.\\
   %
-  \textbf{Programmation microcontrôleur}\\
-  Enseignement de 13,75h en TP pour les 4\`eme ann\'ee AE-SE.\\
-  L'objectif est de donner aux \'etudiants les notions de programmation en C sur des microcontrôleurs STM32.
-  Les \'etudiants apprennent \`a mettre en place ces notions en développant le système de contrôle d'un voilier.
-  Ils devaient récupérer des informations transmises par une télécommande par des signaux RF et les analyser pour contrôler l'orientation de la voile ou de la gouverne.\\
+  \textbf{Programmation microcontr\^oleur}\\
+  Enseignement de 13,75h en TP pour les 4e ann\'ee AE-SE.\\
+  L'objectif est de donner aux \'etudiants les notions de programmation en C sur des microcontr\^oleurs STM32.
+  Les \'etudiants apprennent \`a mettre en place ces notions en d\'eveloppant le syst\`eme de contr\^ole d'un voilier.
+  Ils devaient r\'ecup\'erer des informations transmises par une t\'el\'ecommande par des signaux RF et les analyser pour contr\^oler l'orientation de la voile ou de la gouverne.\\
   %
   \textbf{Programmation langage C}\\
-  Enseignement en TP et TD pour les 3\`eme ann\'ee IMACS et les 2ème année MIC.\\
+  Enseignement en TP et TD pour les 3e ann\'ee IMACS et les 2\`eme ann\'ee MIC.\\
   L'objectif est de mettre en place les notions de programmation en langage C.
-  Les \'etudiants sont ammen\'es \`a \'ecrire des programmes permettant de d\'ecouvrir les diff\'erentes notions et syntaxes du C.
-  Les étudiants sont ensuite ammenés à appliquer ces notions dans la programmation d'un projet tel que la gestion d'une liste chaînée représentant une course cycliste (IMACS).\\
+  Les \'etudiants sont amen\'es \`a \'ecrire des programmes permettant de d\'ecouvrir les diff\'erentes notions et syntaxes du C.
+  Les \'etudiants sont ensuite amen\'es \`a appliquer ces notions dans la programmation d'un projet tel que la gestion d'une liste cha\^in\'ee repr\'esentant une course cycliste (IMACS).\\
   %
   \textbf{Approfondissement en Circuits Electroniques}\\
-  Enseignement de 11h en TP pour les 3ème année IMACS.\\
-  L'objectif est d'approfondir les connaissances en électronique analogique à travers l'utilisation de montages à transistors bipolaires.
-  Les étudiants sont ammenés à étudier le dimensionnement et à réaliser le montage d'un pré-amplificateur à base de transistors bipolaires.\\
+  Enseignement de 11h en TP pour les 3e ann\'ee IMACS.\\
+  L'objectif est d'approfondir les connaissances en \'electronique analogique \`a travers l'utilisation de montages \`a transistors bipolaires.
+  Les \'etudiants sont amen\'es \`a \'etudier le dimensionnement et \`a r\'ealiser le montage d'un pr\'e-amplificateur \`a base de transistors bipolaires.\\
   %
   \textbf{Concepts et Circuits pour le Traitement du Signal}\\
-  Enseignement de 13,75h en TP pour les 2ème année IMACS.\\
-  L'objectif est d'étudier les montages à base d'Amplificateurs Opérationnels pour le traitement de signaux analogiques.
-  Les étudiants sont ainsi ammenés à dimmensionner, réaliser et analyser différents montages à base d'Amplificateurs Opérationnels pour réaliser différents traitement sur des signaux analogiques.\\
+  Enseignement de 13,75h en TP pour les 2\`eme ann\'ee IMACS.\\
+  L'objectif est d'\'etudier les montages \`a base d'Amplificateurs Op\'erationnels pour le traitement de signaux analogiques.
+  Les \'etudiants sont ainsi amen\'es \`a dimmensionner, r\'ealiser et analyser diff\'erents montages \`a base d'Amplificateurs Op\'erationnels pour r\'ealiser diff\'erents traitement sur des signaux analogiques.\\
   %
-  \textbf{Automatique Discrète}\\
-  Enseignement de 11h en TP pour les 2ème année FAS.\\
-  L'objectif est de donner des notions d'automatique discrète à travers l'utilisation de différentes maquettes, telles qu'un ascenseur ou une montre, permettant de visualiser l'évolution d'un système.\\
+  \textbf{Automatique Discr\`ete}\\
+  Enseignement de 11h en TP pour les 2\`eme ann\'ee FAS.\\
+  L'objectif est de donner des notions d'automatique discr\`ete \`a travers l'utilisation de diff\'erentes maquettes, telles qu'un ascenseur ou une montre, permettant de visualiser l'\'evolution d'un syst\`eme.\\
 }
 %
 
 \section{Activit\'es de Recherche}
+Mes activit\'es de recherches ont d\'ebut\'e en 4e ann\'ee AE-SE \`a l'INSA Toulouse dans le cadre d'un projet d'initiation \`a la recherche orient\'e sur la g\'en\'eration et le stockage d'\'energie.
+Par la suite, je me suis orient\'e vers la robotique et plus pr\'ecis\'ement la vision par ordinateur pour les robots durant ma 5e ann\'ee \`a l'INSA.
+J'aborde aujourd'hui les diff\'erents aspects n\'ecessaires pour am\'eliorer l'autonomie d'un robot, qui incluent l'utilisation de capteurs ext\'eroceptifs et particuli\`erement de capteurs LiDAR et de profondeur.\\
+Mes recherches s'int\'eressent \`a la localisation d'objets, la relocalisation du robot dans son environnement en tout temps et la reconstruction de son environnement pour la planification de mouvements.
+Mon int\'er\^et tourne aussi autour de l'embarquement de ces m\'ecanismes sur les capacit\'es de calcul du robot afin de r\'eduire la d\'ependance du robot \`a des plateformes de calcul externes.\\
+\\
+%
+\cventrylong
+{2019-2023}
+{Th\`ese en Robotique}
+{Doctorat r\'ealis\'e sous la direction d'Olivier Stasse}
+{Reconnaissance d'objets visant \`a la locomotion et \`a la manipulation par un robot humano\"ide dans un environnement industriel}
+{}
+{
+  Cette th\`ese s'applique au contexte de l'industrie a\'eronautique.
+  Elle a pour cadre deux projets.
+  Le premier est Robotics For the Future of Aircraft Manufacturing (ROB4FAM).
+  Il s'agit d'un laboratoire joint entre Airbus Operations et l'\'equipe Gepetto du LAAS-CNRS.
+  Il a pour but d'\'etudier la g\'en\'eration r\'eactive de mouvements robotiques pour des t\^aches de per\c cage et d'\'ebavurage destin\'ees \`a l'industrie a\'eronautique.
+  Le second est le projet Europ\'een H2020 Memory of Motion (Memmo) coordonn\'e par l'\'equipe Gepetto et dont Airbus Operations est \'egalement partenaire.
+  Ce projet a pour but de d\'evelopper des m\'ethodes pour g\'en\'erer des mouvements r\'eactifs et complexes ind\'ependamment de l'architecture du robot.
+  Il se base pour cela sur une perception \'etendue de l'environnement et un apprentissage pr\'eliminaire des possibles mouvements du robot.
+  Historiquement, l'\'equipe Gepetto travaille sur les robots humano\"ides, car ils repr\'esentent un challenge scientifique n\'ecessitant de d\'evelopper de nouveaux concepts.\\
+  %
+  La perception de l'environnement, quant \`a elle, peut se d\'ecouper en 4 grands axes : savoir o\`u sont nos outils, savoir o\`u on est, savoir o\`u on va, et savoir o\`u on met les pieds.
+  Cette th\`ese vise \`a \'etudier les solutions qui peuvent \^etre int\'egr\'es dans un robot humano\"ide afin de r\'esoudre les probl\'ematiques mentionn\'ees.
+  Ce travail s'appuie sur le robot humano\"ide Talos pour percevoir l'environnement en utilisant des donn\'ees issues de son LiDAR.\\
+  %
+  Ces travaux montrent premi\`erement qu'il est possible d'estimer pr\'ecis\'ement la position du robot dans son environnement {[2]}.
+  Ceci est obtenu en utilisant des donn\'ees LiDAR et par l'int\'egration d'un syst\`eme d\'evelopp\'e par l'Universit\'e d'Oxford et fourni dans le cadre du projet Memmo.
+  Le syst\`eme fourni est adjoint \`a une odom\'etrie visuelle-inertielle.\\
+  %
+  De plus, la r\'esolution du probl\`eme du robot kidnapp\'e est explor\'ee gr\^ace aux informations du LiDAR, de descripteurs g\'eom\'etriques et un m\'ecanisme de dictionnaire {[1]}.
+  Ce probl\`eme se r\'esume \`a reconna\^itre l'environnement qui nous entoure \`a l'initialisation de la localisation du robot.
+  Un syst\`eme est propos\'e pour r\'esoudre ce probl\`eme avec une pr\'ecision suffisante pour initialiser le syst\`eme de localisation pr\'ec\'edent.\\
+  %
+  Ensuite, la localisation d'objets volumineux \`a longue distance, tels que trouvable dans l'industrie a\'eronautique, est \'etudi\'ee.
+  Cette localisation est r\'efl\'echie en utilisant les donn\'ees 3D et des descripteurs g\'eom\'etriques de type Fast Point Feature Histogram.\\
+  L'\'etude est \'etendue aux r\'eseaux de neurones entra\^in\'es pour localiser des objets portant peu d'informations textuelles \`a travers l'utilisation de m\'ethodes issues de l'\'etat de l'art.\\
+  %
+  Enfin, un syst\`eme d\'etectant les plans au sol, utilisant un capteur d\'edi\'e ajout\'e au bassin du robot, est int\'egr\'e pour rendre le robot capable de planifier ses pas en ligne.
+}
+%
+\cventrylong
+{2019}
+{Projet de Fin d'Etudes}
+{Stage r\'ealis\'e au LAAS-CNRS sous la supervision d'Olivier Stasse et Fr\'ed\'eric Lerasle}
+{Reconnaissance et localisation d'objets par vision embarqu\'ee (cam\'eras RGB ou RGB-D) sur un robot humano\"ide pour des t\^aches de vissage et de per\c cage}
+{}
+{
+  Dans le cadre de leurs recherches, les roboticiens de l'\'equipe Gepetto ont cherch\'e \`a am\'eliorer les capacit\'es de manipulation de leurs robots.
+  Afin de pouvoir manipuler des objets, le robot a besoin de rep\'erer l'objet dans son espace.
+  C'est dans ce contexte que j'ai cherch\'e \`a utiliser des cam\'eras RGB-D et une premi\`ere architecture d\'efinie dans l'\'equipe pour localiser des objets.\\
+  Les objectifs fix\'es \'etaient de prendre un objet dont nous n'avons pas de mod\`ele, d'avoir une phase de mod\'elisation pour obtenir une repr\'esentation de l'objet et d'utiliser cette mod\'elisation pour localiser l'objet sur une table devant le robot.
+  Le syst\`eme de localisation de l'objet a pour objectif de fonctionner sur un ordinateur embarqu\'e sur le robot pour am\'eliorer son autonomie.\\
+  La mod\'elisation est r\'ealis\'ee en utilisant un ensemble de prises de vues RGB-D de l'objet pour reconstruire un mod\`ele sous la forme d'un nuage de point.
+  Dans le syst\`eme de localisation, la donn\'ee transmise par la cam\'era est d'abord pr\'e-trait\'ee afin de limiter l'espace de recherche et de d\'etecter les diff\'erents objets sur une table.
+  Ensuite, le nuage de points mod\'elis\'e est compar\'e aux diff\'erents objets \`a travers des m\'ethodes de r\'ealignement de nuages de points bas\'ees sur l'\'etat de l'art pour d\'efinir la position de l'objet dans l'espace du robot.
+}
+%
+\cventrylong
+{2018}
+{Projet d'Initiation \`a la Recherche}
+{Projet r\'ealis\'ee \`a l'INSA Toulouse sous la supervision de Germain Garcia, Corinne Alonso et Kolja Neuhaus.}
+{Etude d'un syst\`eme d'alimentation \'electrique d'\'electrolyseur pour fabriquer de l'hydrog\`ene \`a partir de CPV (solaire \`a concentration)}
+{}
+{
+  Nous avons \'etudi\'e la faisabilit\'e d'un circuit \`a base de panneaux photovolta\"iques \`a concentration (CPV) pour alimenter un \'electrolyseur afin de produire de l'hydrog\`ene.
+  L'hydrog\`ene est un vecteur d'\'energie propre et durable.
+  Sa production \`a partir d'un \'electrolyseur est efficace, mais elle poss\`ede une limitation principale : la r\'eaction est lente \`a initier.
+  L'\'electrolyseur n\'ecessite donc d'\^etre aliment\'e par une source suffisante et stable.
+  Nos recherches se sont orient\'ees vers l'alimentation du syst\`eme de production avec des CPV et une batterie de support recharg\'e lors des pics d'alimentation et soutenant le syst\`eme lors des creux.
+}
+%
 
 \section{Activit\'es d'Encadrement}
 \cventry
 {Avr. -- Sept. 2022}
 {Dorian Baudu}
 {Stagiaire}
-{}
-{}
+{Dipl\^ome d'Ing\'enieur, majeure Syst\`eme Robotique et Drone}
+{EFREI}
 {
-  Les objectifs \'etaient d'utiliser des m\'ethodes bas\'ees sur les r\'eseaux de neurones pour localiser des objets dans des images et d'int\'egrer le syst\`eme sur un robot pour que la localisation fonctionne en ligne et soit utilis\'e dans des t\^aches de manipulation ou de locomotion.
+  Les objectifs \'etaient d'utiliser des m\'ethodes bas\'ees sur les r\'eseaux de neurones pour localiser des objets dans des images et d'int\'egrer le syst\`eme sur un robot pour que la localisation fonctionne en ligne et soit utilis\'ee dans des t\^aches de manipulation ou de locomotion.
 }
 %
 \cventry
@@ -409,18 +478,28 @@
 {Master Intelligence Artificielle et Reconnaissance des Formes}
 {Universit\'e Paul Sabatier Toulouse III}
 {
-  L'objectif \'etait d'\'etudier l'\'etat de l'art afin de proposer une solution pour le probl\`eme de reconnaissance de place pour un robot humano\"ide dans un environnement industriel en utilisant les donn\'ees g\'eometriques et d'intensit\'e issues d'un LiDAR.
+  L'objectif \'etait d'\'etudier l'\'etat de l'art afin de proposer une solution pour le probl\`eme de reconnaissance de place pour un robot humano\"ide dans un environnement industriel en utilisant les donn\'ees g\'eom\'etriques et d'intensit\'e issues d'un LiDAR.
 }
 %
 \cventry
 {Juin -- Sept. 2020}
 {Hugo Lefevre}
 {Stagiaire}
-{4\`eme ann\'ee de formation Ing\'enieur, Sp\'ecialit\'e Automatique Electronique}
+{4e ann\'ee de formation Ing\'enieur, Sp\'ecialit\'e Automatique Electronique}
 {INSA Toulouse}
 {
-  L'objectif \'etait de d\'evelopper des tests int\'egratifs pour un syst\`eme de SLAM et utilis\'e dans l'\'equipe sur le robot humanoide TALOS en utilisant le simulateur Gazebo et une mod\'elisation de la salle d'exp\'erimentation du laboratoire.
+  L'objectif \'etait de d\'evelopper des tests d'int\'egration pour un syst\`eme de SLAM utilis\'e dans l'\'equipe sur le robot humano\"ide TALOS en utilisant le simulateur Gazebo et une mod\'elisation de la salle d'exp\'erimentation du laboratoire.
 }
+%
+
+\section{Activit\'e Collectives et Administratives}
+Au cours de mes \'etudes et de mon doctorat, je me suis impliqu\'e \`a diff\'erents niveaux dans l'\'equipe Gepetto au LAAS-CNRS ainsi que dans l'Association Sportive de l'INSA.\\
+Au sein de l'\'equipe Gepetto, j'ai \'et\'e co-responsable de l'organisation des bureaux de l'\'equipe ainsi que de l'accueil des nouveaux arrivants.
+Je me suis assur\'e que chaque \'etudiant arrivant dans l'\'equipe se voit attribuer un lieu convenable pour la dur\'ee de son passage.
+J'ai aussi particip\'e \`a l'int\'egration des nouveaux arrivants dans l'\'equipe.\\
+Au sein de l'Association Sportive de l'INSA, j'ai particip\'e de 2016 \`a 2023 \`a l'entra\^inement des archers d\'ebutants afin de les initier \`a la pratique du tir \`a l'arc.
+Durant cette p\'eriode, j'ai aussi particip\'e \`a l'organisation des d\'eparts en comp\'etitions et Championnats de France des comp\'etiteurs dont je faisais partie, en organisant les financements, transports et h\'ebergements n\'ecessaires.
+Enfin, en ma qualit\'e de Tr\'esorier de l'AS de 2017 \`a 2018, j'ai particip\'e \`a l'organisation des multiples \'ev\'enements propos\'es par l'association ainsi qu'\`a l'organisation financi\`ere des d\'eplacements des sportifs des diff\'erentes sections.\\
 %
 
 \section{Publications Scientifiques}
@@ -456,10 +535,15 @@
 \cventry
 {2017 -- 2023}
 {Association Sportive de l'INSA de Toulouse}
-{Encadrant et membre de l'\'equipe comp\'etition de la section Tir \`a l'arc, Tr\'esorier et responsable de la section Tir \`a l'arc (2017 -- 2018)}
 {}
 {}
 {}
+{
+  \begin{itemize}
+    \item Encadrant et membre de l'\'equipe comp\'etition de la section Tir \`a l'arc (2017 -- 2023)
+    \item Tr\'esorier et responsable de la section Tir \`a l'arc (2017 -- 2018)
+  \end{itemize}
+}
 %
 \cventry
 {2016 -- 2019}
@@ -493,5 +577,4 @@
 {}
 {}
 %
-
 \end{document}
