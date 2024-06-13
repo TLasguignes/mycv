@@ -96,10 +96,14 @@ leftmargin=\hintscolumnwidth+\separatorcolumnwidth+\labelwidth+\labelsep}
 %\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
 %-----       resume       ---------------------------------------------------------
 
+\newcommand{\numeroposteMCF}[0]{4903}
+\input{./projets_mcf/page_de_garde}
+% \newpage
+
 \makecvtitle
 \vspace*{-1cm}
 
-\section{Formations}
+\section{Formations}\label{formations}
 \cventry
 {2023}
 {Doctorat en Robotique}
@@ -178,7 +182,7 @@ leftmargin=\hintscolumnwidth+\separatorcolumnwidth+\labelwidth+\labelsep}
 {}
 %
 
-\section{Exp\'eriences Professionnelles}
+\section{Exp\'eriences Professionnelles}\label{exp-professionnelles}
 \cventry
 {Depuis 2023}
 {Attach\'e Temporaire d'Enseignement et de Recherche}
@@ -243,7 +247,7 @@ leftmargin=\hintscolumnwidth+\separatorcolumnwidth+\labelwidth+\labelsep}
 }
 %
 
-\section{Activit\'es d'Enseignement}
+\section{Activit\'es d'Enseignement}\label{act-enseignement}
 J'ai réalisé un total de 445h d'enseignement équivalent TD couvrant les différents aspects des systèmes embarqués et pour différents niveaux. Mes interventions ont eu lieu autour de la programmation sur différents langages, l'informatique industrielle et les systèmes temps réels, mais aussi en automatique discrète et en électronique pour le traitement du signal.\\
 Je me suis impliqué dans l'évaluation des étudiants dans le cadre de différentes matières, allant de la surveillance des examens à l'écriture des sujets et la correction des copies. Dans le cadre de mes postes ATER à l'Université Toulouse III Paul Sabatier et à l'INSA Toulouse, j'ai été ammené à remodeler le contenu de matières, en retravaillant voire changeant le contenu des enseignements, des travaux dirigés et des travaux pratiques. Ces matières concernait différents niveaux d'études allant de la première année au M1.\\
 Dans le cadre de mes contrats ATER, j'ai aussi été emmené à accompagner des étudiants lors de leurs stages de fin d'études (niveau M2). Dans ce même cadre, je détaille dans mes Activités d'Encadrement les encadrement de stagiaires que j'ai eu l'occasion d'effectuer pendant mon doctorat.\\
@@ -424,7 +428,7 @@ Mes recherches s'int\'eressent \`a la localisation d'objets, la relocalisation d
 Mon int\'er\^et tourne aussi autour de l'embarquement de ces m\'ecanismes sur les capacit\'es de calcul du robot afin de r\'eduire la d\'ependance du robot \`a des plateformes de calcul externes.\\
 \\
 %
-\cventrylong
+\label{these}\cventrylong
 {2019-2023}
 {Th\`ese en Robotique}
 {Doctorat r\'ealis\'e sous la direction d'Olivier Stasse}
@@ -492,7 +496,7 @@ Mon int\'er\^et tourne aussi autour de l'embarquement de ces m\'ecanismes sur le
 }
 %
 
-\section{Activit\'es d'Encadrement}
+\section{Activit\'es d'Encadrement}\label{act-encadrement}
 \cventry
 {Avr. -- Sept. 2022}
 {Dorian Baudu}
@@ -547,7 +551,7 @@ Enfin, en ma qualit\'e de Tr\'esorier de l'AS de 2017 \`a 2018, j'ai particip\'e
 \section{Publications Scientifiques}
 % Underline my name
 \toggletrue{myrefs}
-\large{\underline{Articles} :}
+\large{\underline{Articles en Conférences} :}
 \begin{itemize}%
 \normalsize{\item[[1]\hspace{-2mm}]} \normalsize{\bibentry{lasguignes:irc:2023}}
 \normalsize{\item[[2]\hspace{-2mm}]} \normalsize{\bibentry{lasguignes:icar:2021}}
@@ -624,4 +628,5 @@ Enfin, en ma qualit\'e de Tr\'esorier de l'AS de 2017 \`a 2018, j'ai particip\'e
 
 \input{./projets_mcf/projet_recherche}
 
+\label{dernierepage}
 \end{document}
