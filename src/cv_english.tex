@@ -15,7 +15,7 @@
 %\nopagenumbers{}                                   % uncomment to suppress automatic page numbering for CVs longer than one page
 
 % character encoding
-\usepackage[utf8]{inputenc}                         % if you are not using xelatex ou lualatex, replace by the encoding you are using
+\usepackage[latin1]{inputenc}                         % if you are not using xelatex ou lualatex, replace by the encoding you are using
 %\usepackage{CJKutf8}                               % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 
 % adjust the page margins
@@ -26,14 +26,20 @@
 %\setlength{\makecvtitlenamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks.
                                                     % be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % d'autres polices sont possibles
+\usepackage[english]{babel}
+
 %** WHY ?
 \usepackage{xparse}
 %**
 
 \usepackage{bibentry}
+\usepackage{makecell}                               % for multiline cells
+\usepackage{wrapfig}                                % for wraping figures
 \nobibliography*
 
-\bibliographystyle{my_plain}
+\bibliographystyle{unsrt}
 
 \usepackage{etoolbox}
 \newtoggle{myrefs}
@@ -121,7 +127,7 @@ The research is based on the use of point cloud realignment methods, such as \em
 %
 \cventry{2019 -- 2021}{``Doctorant Contractuel Charg\'e d'Enseignement''}{INSA Toulouse (31)}{}
 {}{
-  Teaching in the Electrical and Computer Engineering department of ``Institut National des Sciences Appliquées'' of Toulouse over two years, for a total of 128 hours.
+  Teaching in the Electrical and Computer Engineering department of ``Institut National des Sciences Appliqu\'ees'' of Toulouse over two years, for a total of 128 hours.
   \begin{itemize}
     \item Practical Work: Programming notions in C (2nd and 3rd years)
     \item Practical Work: Development of a Real Time system for the management of a mobile base in an arena (4th year)

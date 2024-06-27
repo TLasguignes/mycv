@@ -15,7 +15,7 @@
 %\nopagenumbers{}                                   % uncomment to suppress automatic page numbering for CVs longer than one page
 
 % character encoding
-\usepackage[utf8]{inputenc}                         % if you are not using xelatex ou lualatex, replace by the encoding you are using
+\usepackage[latin1]{inputenc}                         % if you are not using xelatex ou lualatex, replace by the encoding you are using
 %\usepackage{CJKutf8}                               % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 
 % adjust the page margins
@@ -26,6 +26,10 @@
 %\setlength{\makecvtitlenamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks.
                                                     % be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % d'autres polices sont possibles
+\usepackage[frenchb]{babel}
+
 %** WHY ?
 \usepackage{xparse}
 %**
@@ -35,7 +39,7 @@
 \usepackage{wrapfig}                                % for wraping figures
 \nobibliography*
 
-\bibliographystyle{my_plain}
+\bibliographystyle{unsrt-fr}
 
 \usepackage{enumitem}
 \usepackage{scrextend}
@@ -330,11 +334,11 @@ leftmargin=\hintscolumnwidth+\separatorcolumnwidth+\labelwidth+\labelsep}
   Les \'etudiants codaient en C des programmes permettant d'observer la diff\'erence de codage et d'interpr\'etation des informations num\'eriques.
   Ils d\'eveloppaient aussi des programmes permettant de r\'ecup\'erer et de rendre des informations \`a travers des ports d'entr\'ees et de sorties binaires et analogiques.\\
   %
-  \textbf{Systèmes à Evenements Discrets}\\
+  \textbf{Syst\`emes \`a Evenements Discrets}\\
   Enseignement de 10h en TP pour les Licence 1 du d\'epartement EEA.\\
-  L'objectif était de mettre en place des notions de logique combinatoire et de logique séquentielle pour la représentation des systèmes à évènements discrets par une décomposition en "composants logiques".
-  Les étudiants sont amenés à étudier différents systèmes à évènements discrets en réalisant une décomposition guidée des "composants" pour étudier le fonctionnement logique de chacuns.
-  A travers les travaux pratiques, les étudiants manipulent les différents outils de la logique combinatoire (algèbre de Boole, tables de vérité et de Karnaugh, etc) ainsi que la mise en place de blocs de mémorisation (bascules, registres, etc) pour la description de mécanismes séquentiels tels que des compteurs.\\
+  L'objectif \'etait de mettre en place des notions de logique combinatoire et de logique s\'equentielle pour la repr\'esentation des syst\`emes \`a \'ev\`enements discrets par une d\'ecomposition en "composants logiques".
+  Les \'etudiants sont amen\'es \`a \'etudier diff\'erents syst\`emes \`a \'ev\`enements discrets en r\'ealisant une d\'ecomposition guid\'ee des "composants" pour \'etudier le fonctionnement logique de chacuns.
+  A travers les travaux pratiques, les \'etudiants manipulent les diff\'erents outils de la logique combinatoire (alg\`ebre de Boole, tables de v\'erit\'e et de Karnaugh, etc) ainsi que la mise en place de blocs de m\'emorisation (bascules, registres, etc) pour la description de m\'ecanismes s\'equentiels tels que des compteurs.\\
   %
   \textbf{Base de l'architecture et des syst\`emes}\\
   Enseignement de 24h en TP pour les Licence 1 Informatique.\\

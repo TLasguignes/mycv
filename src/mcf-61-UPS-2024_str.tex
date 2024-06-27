@@ -15,7 +15,7 @@
 %\nopagenumbers{}                                   % uncomment to suppress automatic page numbering for CVs longer than one page
 
 % character encoding
-\usepackage[utf8]{inputenc}                         % if you are not using xelatex ou lualatex, replace by the encoding you are using
+\usepackage[latin1]{inputenc}                         % if you are not using xelatex ou lualatex, replace by the encoding you are using
 %\usepackage{CJKutf8}                               % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 
 % adjust the page margins
@@ -26,6 +26,10 @@
 %\setlength{\makecvtitlenamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks.
                                                     % be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % d'autres polices sont possibles
+\usepackage[frenchb]{babel}
+
 %** WHY ?
 \usepackage{xparse}
 %**
@@ -35,7 +39,7 @@
 \usepackage{wrapfig}                                % for wraping figures
 \nobibliography*
 
-\bibliographystyle{my_plain}
+\bibliographystyle{unsrt-fr}
 
 \usepackage{enumitem}
 \usepackage{scrextend}
@@ -248,23 +252,23 @@ leftmargin=\hintscolumnwidth+\separatorcolumnwidth+\labelwidth+\labelsep}
 %
 
 \section{Activit\'es d'Enseignement}\label{act-enseignement}
-J'ai réalisé un total de 445h d'enseignement équivalent TD couvrant les différents aspects des systèmes embarqués et pour différents niveaux. Mes interventions ont eu lieu autour de la programmation sur différents langages, l'informatique industrielle et les systèmes temps réels, mais aussi en automatique discrète et en électronique pour le traitement du signal.\\
-Je me suis impliqué dans l'évaluation des étudiants dans le cadre de différentes matières, allant de la surveillance des examens à l'écriture des sujets et la correction des copies. Dans le cadre de mes postes ATER à l'Université Toulouse III Paul Sabatier et à l'INSA Toulouse, j'ai été ammené à remodeler le contenu de matières, en retravaillant voire changeant le contenu des enseignements, des travaux dirigés et des travaux pratiques. Ces matières concernait différents niveaux d'études allant de la première année au M1.\\
-Dans le cadre de mes contrats ATER, j'ai aussi été emmené à accompagner des étudiants lors de leurs stages de fin d'études (niveau M2). Dans ce même cadre, je détaille dans mes Activités d'Encadrement les encadrement de stagiaires que j'ai eu l'occasion d'effectuer pendant mon doctorat.\\
-Les enseignements que j'ai effectué sont résumés par domaine dans le tableau suivant et détaillés ci-apprès.\\
+J'ai r\'ealis\'e un total de 445h d'enseignement \'equivalent TD couvrant les diff\'erents aspects des syst\`emes embarqu\'es et pour diff\'erents niveaux. Mes interventions ont eu lieu autour de la programmation sur diff\'erents langages, l'informatique industrielle et les syst\`emes temps r\'eels, mais aussi en automatique discr\`ete et en \'electronique pour le traitement du signal.\\
+Je me suis impliqu\'e dans l'\'evaluation des \'etudiants dans le cadre de diff\'erentes mati\`eres, allant de la surveillance des examens \`a l'\'ecriture des sujets et la correction des copies. Dans le cadre de mes postes ATER \`a l'Universit\'e Toulouse III Paul Sabatier et \`a l'INSA Toulouse, j'ai \'et\'e ammen\'e \`a remodeler le contenu de mati\`eres, en retravaillant voire changeant le contenu des enseignements, des travaux dirig\'es et des travaux pratiques. Ces mati\`eres concernait diff\'erents niveaux d'\'etudes allant de la premi\`ere ann\'ee au M1.\\
+Dans le cadre de mes contrats ATER, j'ai aussi \'et\'e emmen\'e \`a accompagner des \'etudiants lors de leurs stages de fin d'\'etudes (niveau M2). Dans ce m\^eme cadre, je d\'etaille dans mes Activit\'es d'Encadrement les encadrement de stagiaires que j'ai eu l'occasion d'effectuer pendant mon doctorat.\\
+Les enseignements que j'ai effectu\'e sont r\'esum\'es par domaine dans le tableau suivant et d\'etaill\'es ci-appr\`es.\\
 \begin{center}
   \vspace{-1em}
   \renewcommand{\arraystretch}{1.5}
   \begin{tabular}{|c|c|c|c|c|}
     \hline
-    ~Domaine~                       & ~Cadre~        & ~Institution~ & ~\makecell{Volume horaire\\eq. TD}~ & ~Niveau ou équivalent~ \\
+    ~Domaine~                       & ~Cadre~        & ~Institution~ & ~\makecell{Volume horaire\\eq. TD}~ & ~Niveau ou \'equivalent~ \\
     \hline
     \hline
     Programmation~                  & ~ATER et DCCE~ & ~UPS et INSA~ & ~228,12h~                             & ~L3 et M1~             \\
     \hline
-    Systèmes Temps Réel~            & ~ATER et DCCE~ & ~UPS et INSA~ & ~71h~                                 & ~M1~                   \\
+    Syst\`emes Temps R\'eel~            & ~ATER et DCCE~ & ~UPS et INSA~ & ~71h~                                 & ~M1~                   \\
     \hline
-    Automatique Discrète~           & ~ATER et DCCE~ & ~UPS et INSA~ & ~66h~                                 & ~L2, L3 et M1~         \\
+    Automatique Discr\`ete~           & ~ATER et DCCE~ & ~UPS et INSA~ & ~66h~                                 & ~L2, L3 et M1~         \\
     \hline
     Informatique Industrielle~      & ~ATER~         & ~UPS~         & ~20h~                                 & ~L1 et L2~             \\
     \hline
@@ -272,9 +276,9 @@ Les enseignements que j'ai effectué sont résumés par domaine dans le tableau 
     \hline
     Robotique et ROS~               & ~ATER et DCCE~ & ~UPS et INSA~ & ~16h~                                 & ~M1~                   \\
     \hline
-    Programmation Parallèle~        & ~ATER~         & ~UPS~         & ~15h~                                 & ~M1~                   \\
+    Programmation Parall\`ele~        & ~ATER~         & ~UPS~         & ~15h~                                 & ~M1~                   \\
     \hline
-    ~Programmation Orientée Objets~ & ~ATER~         & ~INSA~        & ~12,83h~                              & ~M1~                   \\
+    ~Programmation Orient\'ee Objets~ & ~ATER~         & ~INSA~        & ~12,83h~                              & ~M1~                   \\
     \hline
   \end{tabular}
   \vspace{.5em}
@@ -367,11 +371,11 @@ Les enseignements que j'ai effectué sont résumés par domaine dans le tableau 
   Les \'etudiants codaient en C des programmes permettant d'observer la diff\'erence de codage et d'interpr\'etation des informations num\'eriques.
   Ils d\'eveloppaient aussi des programmes permettant de r\'ecup\'erer et de rendre des informations \`a travers des ports d'entr\'ees et de sorties binaires et analogiques.\\
   %
-  \textbf{Systèmes à Evenements Discrets}\\
+  \textbf{Syst\`emes \`a Evenements Discrets}\\
   Enseignement de 10h en TP pour les Licence 1 du d\'epartement EEA.\\
-  L'objectif était de mettre en place des notions de logique combinatoire et de logique séquentielle pour la représentation des systèmes à évènements discrets par une décomposition en "composants logiques".
-  Les étudiants sont amenés à étudier différents systèmes à évènements discrets en réalisant une décomposition guidée des "composants" pour étudier le fonctionnement logique de chacuns.
-  A travers les travaux pratiques, les étudiants manipulent les différents outils de la logique combinatoire (algèbre de Boole, tables de vérité et de Karnaugh, etc) ainsi que la mise en place de blocs de mémorisation (bascules, registres, etc) pour la description de mécanismes séquentiels tels que des compteurs.\\
+  L'objectif \'etait de mettre en place des notions de logique combinatoire et de logique s\'equentielle pour la repr\'esentation des syst\`emes \`a \'ev\`enements discrets par une d\'ecomposition en "composants logiques".
+  Les \'etudiants sont amen\'es \`a \'etudier diff\'erents syst\`emes \`a \'ev\`enements discrets en r\'ealisant une d\'ecomposition guid\'ee des "composants" pour \'etudier le fonctionnement logique de chacuns.
+  A travers les travaux pratiques, les \'etudiants manipulent les diff\'erents outils de la logique combinatoire (alg\`ebre de Boole, tables de v\'erit\'e et de Karnaugh, etc) ainsi que la mise en place de blocs de m\'emorisation (bascules, registres, etc) pour la description de m\'ecanismes s\'equentiels tels que des compteurs.\\
   %
   \textbf{Base de l'architecture et des syst\`emes}\\
   Enseignement de 24h en TP pour les Licence 1 Informatique.\\
@@ -551,7 +555,7 @@ Enfin, en ma qualit\'e de Tr\'esorier de l'AS de 2017 \`a 2018, j'ai particip\'e
 \section{Publications Scientifiques}
 % Underline my name
 \toggletrue{myrefs}
-\large{\underline{Articles en Conférences} :}
+\large{\underline{Articles en Conf\'erences} :}
 \begin{itemize}%
 \normalsize{\item[[1]\hspace{-2mm}]} \normalsize{\bibentry{lasguignes:irc:2023}}
 \normalsize{\item[[2]\hspace{-2mm}]} \normalsize{\bibentry{lasguignes:icar:2021}}
@@ -610,7 +614,7 @@ Enfin, en ma qualit\'e de Tr\'esorier de l'AS de 2017 \`a 2018, j'ai particip\'e
 \cventry
 {Tir \`a l'arc}
 {Pratique en club et en comp\'etition}
-{Participation aux Championnats de France Universitaire en tant que compétiteur de 2016 \`a 2020 et de 2022 \`a 2023, et en tant que coach en 2024 (ASUPS)}
+{Participation aux Championnats de France Universitaire en tant que comp\'etiteur de 2016 \`a 2020 et de 2022 \`a 2023, et en tant que coach en 2024 (ASUPS)}
 {}
 {}
 {}
