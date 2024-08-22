@@ -1,0 +1,87 @@
+
+\documentclass[10pt, a4paper, roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\usepackage[french]{babel}
+
+
+% moderncv themes
+\moderncvstyle{classic}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                              % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% To justify the text (add command \justifying to justify left and right)
+\usepackage{ragged2e}
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\name{Thibaud}{Lasguignes}
+\title{Docteur en robotique humano\"ide et vision par ordinateur}            % optional, remove / comment the line if not wanted
+\address{2 All\'ee Elise Deroche}{R\'esidence Lindbergh, G2-202}{31400 Toulouse} % optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\phone[mobile]{+33~(6)~26~36~28~13}                   % optional, remove / comment the line if not wanted
+% \phone[fixed]{+2~(345)~678~901}                     % optional, remove / comment the line if not wanted
+% \phone[fax]{+3~(456)~789~012}                       % optional, remove / comment the line if not wanted
+\email{thibaud.lasguignes@sfr.fr}                     % optional, remove / comment the line if not wanted
+\social[github]{TLasguignes}
+\social[linkedin]{thibaud-lasguignes}
+% \homepage{www.johndoe.com}                          % optional, remove / comment the line if not wanted
+% \photo[4cm]{./photo_2023.jpg}                % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \quote{Some quote}                                  % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%-----       letter       ---------------------------------------------------------
+% recipient data
+% \recipient{Destinataire}{Département, Entreprise}
+\date{19 juillet 2024}
+\opening{Objet : \emph{Synthèse du poste d'Enseignant-Chercheur}}
+% \closing{Je vous remercie par avance de l'intérêt que vous portez à ma candidature et vous adresse mes sincères salutations.}
+% \enclosure[Adjunto]{CV}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+\makelettertitle
+\justifying
+
+Le poste concerné est un poste d'Enseignant-Chercheur au sein du CESI à Toulouse.
+Le candidat sera intégré à l'équipe pédagogique du Campus de Toulouse ainsi qu'au laboratoire LINEACT.
+Le poste présente ainsi deux missions complémentaires : l'enseignement et la recherche scientifique.
+Le candidat devra à lier ces deux missions en assurant la transmission des connaissances développées au laboratoire aux étudiants en formation.
+
+Le candidat participera à la conception et au développement des enseignements du CESI dans les domaines de l'informatique et du numérique.
+Ces enseignements, basés sur le Problem Based Learning (PBL), ont pour objectif d'enseigner les différents domaines de l'ingénierie à travers des exemples et des projets concrets en partenariat avec les acteurs de l'industrie.
+Dans le cadre des projets, le candidat devra participer à l'encadrement des étudiants en groupe sur la résolution des problèmes qui leur seront présentés.
+L'objectif sera de les guider dans leurs réflexions en leur apportant les questionnements qui leur permettront de trouver une solution.
+
+Au sein du laboratoire, le candidat devra développer un projet de recherche innovant et appliqué en lien avec les activités du LINEACT.
+Dans le cadre de ses missions, il sera amené à travailler avec des chercheurs présents sur les différentes instances du laboratoire.
+Le travail d'équipe étant important dans la politique du groupe CESI, il sera particulièrement amené à travailler en binôme avec un autre chercheur du domaine afin de développer sa recherche.
+Parmi ses missions liées à la recherche, le candidat sera aussi impliqué dans la rédaction des réponses aux appels d'offres et des projets qui permettront d'apporter de nouvelles problématiques aux chercheurs et aux étudiants.
+De plus, le candidat pourra s'impliquer dans la supervision de doctorants pour les guider dans leurs projets de recherche et professionnels.
+L'enseignant-chercheur pourra être amené à participer à la création et au développement des plateformes applicatives qui seront mises à disposition de la recherche et de l'enseignement.
+
+Enfin, le recruté sera une force promotionnelle du LINEACT, du CESI et de ses formations en participant à la communication des offres du groupe.
+Il participera au rayonnement de l'établissement par la publication de ses travaux scientifique, l'échange avec les partenaires industriels présents et futurs ainsi que la participation aux évènements de promotion des formations.
+
+\vspace{0.5cm}
+
+% \makeletterclosing
+
+\end{document}
+
+
+%% end of file `template.tex'.

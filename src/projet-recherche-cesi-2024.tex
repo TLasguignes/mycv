@@ -1,0 +1,312 @@
+\documentclass[a4paper, french, 10pt, onecolumn, notitlepage, roman]{article}
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+
+% To justify the text (add command \justifying to justify left and right)
+\usepackage{ragged2e}
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+
+\usepackage[citestyle=numeric,mincitenames=1,maxcitenames=1,bibstyle=ieee,backend=bibtex8]{biblatex}
+\addbibresource{projet.bib}
+\AtEveryBibitem{
+    \clearfield{doi}
+    \clearfield{url}
+    \clearfield{urldate}
+    \clearfield{note}
+    \clearfield{issn}
+}
+
+\usepackage{SIunits}
+\usepackage{enumitem,amssymb}
+% just to have checkboxes in my list of things to put in my project
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+
+% Définir les couleurs de moderncv
+\definecolor{moderncvblue}{rgb}{0.22,0.45,0.70}
+\definecolor{moderncvgray}{rgb}{0.45,0.45,0.45}
+
+\title{Projet de recherche CESI-LINEACT}
+\author{Thibaud Lasguignes}
+
+% Informations personnelles
+\newcommand{\nom}{Thibaud Lasguignes}
+\newcommand{\adresse}{2 Allée Elise Deroche}
+\newcommand{\adressecplt}{Résidence Lindbergh, G2-202}
+\newcommand{\codepostal}{31400}
+\newcommand{\ville}{Toulouse}
+\newcommand{\telephone}{+33 6 26 36 28 13}
+\newcommand{\email}{thibaud.lasguignes@sfr.fr}
+
+% Personnaliser l'en-tête de la première page
+\newcommand{\customheader}{
+    \raggedleft
+    \textcolor{moderncvgray}{\textbf{\nom}} \\
+    \textcolor{moderncvgray}{\textsl{\small\adresse}} \\
+    \textcolor{moderncvgray}{\textsl{\small\adressecplt}} \\
+    \textcolor{moderncvgray}{\textsl{\small\codepostal~\ville}} \\
+    \textcolor{moderncvgray}{\textsl{\small\telephone}} \\
+    \textcolor{moderncvgray}{\textsl{\small\href{mailto:\email}{\email}}} \\
+}
+
+\begin{document}
+\date{}
+\customheader
+
+\centering
+
+\vspace{2em}
+{\Large\textbf{Projet de Recherche}}
+
+\justifying
+
+% Ajouter l'en-tête personnalisé à la première page
+% \section{présenté à l'entretien}
+
+% \begin{frame}{Projet de Recherche}
+%   \begin{block}{Intégration dans le laboratoire}
+%     \begin{itemize}
+%       \item Thème : Ingénierie et Outils Numériques
+%       \item Axe 1 : Cyber Physical Production System
+%       \end{itemize}
+%     \end{block}
+%     \begin{block}{Axe de recherche : perception et interprétation de scène}
+%       \begin{itemize}
+%         \item Segmentation de l'information
+%         \item Cartographie de l'environnement
+%         \item Navigation pour les robots
+%         \item Fusion multi-capteurs
+%       \end{itemize}
+%     \end{block}
+% \end{frame}
+
+% \section{Spécification mail}
+% Projet d’Intégration écrit :
+% \begin{itemize}
+%   \item Vous pouvez envoyer à Céline Viazzi (cviazzi@cesi.fr) une première version sur laquelle vous pourrez faire des itérations pour le 19/08/2024.
+%   \item Doivent figurer a minima les éléments suivants :
+%   \begin{todolist}
+%     \item[\done] Thème de Recherche
+%     \item[\done] Axe dans le thème 2. Pour cela appuyez-vous du rapport d’activité du laboratoire ainsi que du site internet qui est à jour pour prendre connaissance des projets ainsi que de la production scientifique.
+%     \item[\done] Expertise maitrisée à mobiliser (robotique/ CPS)
+%     \item[\done] Domaine d’application visé : Industrie du Futur
+%     \item Etat de l’art qui met en avant les manques et les apports que votre projet scientifique pourra faire.
+%     \item Question(s) de recherche soulevée(s) : c’est un point très important. Evitez de multiplier les questions de recherche et concentrer vous sur 1 voire 2 questions maximum en lien avec l’état de l’art.
+%     \item[\done] Plan d’action sur 3 ans avec un focus sur les jalons à 6 mois/ 1an et 3 ans.
+%     \item[\done] 1 ou 2 chercheurs identifiés au sein de Lineact avec lesquels vous pourriez collaborer et comparer quelques publications (1 à 2) de ces chercheurs avec le projet proposé.
+%     \item[\done] Le projet devra être concentré sur 5 pages maximum et les références bibliographiques peuvent éventuellement figurer en annexe.
+%   \end{todolist}
+% \end{itemize}
+
+% Le document final doit être transmis au comité ainsi qu’au rapporteur interne de votre dossier 3 semaines avant l’oral.
+% Nous visons donc la date du 23/08/2023.
+
+% \underline{Préparation du ppt pour le comité :}
+% \begin{itemize}
+%   \item Nous devons le transmettre au comité 2 jours avant la date à fixer du comité.
+%   \item Le plan peut intégrer un volet enseignement sur 1 seule slide en complément de la partie recherche.
+%   \item Le phasage est : 20 min de présentation du candidat comportant son projet d’intégration scientifique et 25 min d’échanges avec le comité.
+% \end{itemize}
+% \newpage
+
+\section{Introduction}
+Les progrès technologiques ont initialement conduit au développement et à l'intégration de systèmes automatisés dans divers secteurs, notamment dans l'industrie.
+Les évolutions suivantes ont mené à une recherche d'autonomisation des systèmes pour réduire la nécessité d'intervention humaine et augmenter la capacité des systèmes à s'adapter aux environnements dynamiques.
+La capacité des systèmes robotiques à découvrir et interagir avec leur environnement est devenue cruciale pour optimiser les processus industriels, réduire les coûts et augmenter la productivité.
+
+Parmi les technologies disponibles, le LiDAR (Light Detection and Ranging) se distingue par ses récentes évolutions, permettant d'obtenir des données tridimensionnelles précises avec un champ de vision comparable à celui des caméras.
+Ces nouvelles données permettent d'améliorer la perception et la compréhension de l'environnement.
+Cependant, pour maximiser l'efficacité des systèmes, il peut être nécessaire de fusionner différentes sources d'information, par exemple en combinant les données LiDAR avec celles de caméras ou d'autres capteurs.
+
+Enfin, l'un des principaux défis pour ces systèmes autonomes et la navigation.
+Dans ce contexte, il est crucial de cartographier l'environnement pour pouvoir s'y référer lors des déplacements.
+Ces cartes peuvent prendre différentes formes, telles que des cartes d'amers visuels ou des nuages de points, facilitant la localisation mais limitant l'information utile pour la planification.
+Ainsi, la cartographie tend de plus en plus vers des modèles sémantiques qui juxtaposent des informations permettant la planification des déplacements ou des tâches avec celles utiles à la simple localisation.
+
+\section{\'Etat de l'Art}
+
+Il existe deux choix habituels en terme de capteurs visuels pour des applications robotiques : Les caméras et les LiDAR.
+\cite{barros::2021} présente les avantages et les inconvénients de ces capteurs, en ciblant particulièrement sur les problématiques de reconnaissance de lieu.
+Par exemple, les caméras présentent un champ de vision limité, alors que les LiDARs disponibles aujourd'hui permettent d'obtenir une vue à $360\degree$ sans distorsion sur un axe.
+Toutefois, en terme de coût et de consommation d'énergie, les caméras ont souvent l'avantage.
+Il en ressort que l'environnement cible doit être pris en compte pour le choix des capteurs, puisque les caméras sont plus dépendantes des textures visuelles, au contraire des LiDAR qui s'appuient majoritairement sur les matériaux.
+D'autres capteurs compensent la dépendance des caméras monoculaires RGB à l'égard des textures visuelles en produisant des informations sur la profondeur, soit avec la stéréovision, soit avec un projecteur et des caméras infrarouges.
+Cependant, ces informations sur la profondeur sont moins précises que celles d'un LiDAR.
+Avec l'évolution des technologies, et en particulier les progrès des Systèmes Micro-ElectroMécaniques (MEMS), des caméras intègrent une perception de la profondeur LiDAR, tel que la caméra LiDAR Intel RealSense L515~\cite{intel:l515:}, ce qui améliore la portée et la précision des informations de profondeur.
+\cite{yang:arxiv:2022} montre l'intérêt porté aux LiDARs 3D en robotique par leur diversité de champ d'application et la quantité grandissante de fabriquant et de publications liées à ces capteurs.
+
+\subsection{Segmentation de données LiDAR}
+L'objectif de la segmentation et des diviser la données en segments.
+Selon l'information et la méthode, ces segments peuvent être des amers géométriques, des objets ou des parties de la scène.
+La segmentation de données LiDAR est un challenge car la donnée est généralement éparse et non organisée.
+Toutefois, certaines méthodes trouvent une organisation dans la donnée 3D en utilisant la mécanique du capteur.
+Le principe mécanique d'un LiDAR présente souvent un ou plusieurs axes de rotation.
+Il est ainsi possible de retrouver une organisation dans la donnée en considérant l'ordre de prise de mesure des points et la rotation du ou des mesures.
+Ces méthodes peuvent toutefois être limitées à la connaissance du modèle du capteur.
+
+\subsubsection{Méthodes traditionnelles de segmentation}
+Les approches traditionnelles, comme DBSCAN~\cite{ester:ickddm:1996} ou la segmentation basée sur les caractéristiques géométriques, restent couramment utilisées.
+
+Les méthodes basées sur DBSCAN utilisent la densité de l'information pour diviser les segments.
+D'autres méthodes regroupent les points par leur proximité géométriques comme l'euclidean clustering~\cite{rusu:these:2009}.
+
+D'autres méthodes souvent utilisée reviennent à faire correspondre un modèle géométrique aux données basées sur la transformée de Hough~\cite{hough::1962} ou RANSAC~\cite{fischler:acm:1981}.
+
+De nombreuses méthodes cherchent d'abord à retirer le sol de la donnée afin de faciliter la séparation des segments en suivant.
+\cite{zermas:icra:2017} présente une méthode de segmentation de donnée LiDAR rapide mais appliquée spécifiquement au domaine du véhicule autonome.
+Une fois le sol extrait, l'information obtenue est segmentée en utilisant l'information des lignes de mesures pour regrouper les points.
+\cite{bogoslavskyi:iros:2016} utilise la physique du capteur pour retransformer l'information 3D en image de profondeur et, une fois le sol retiré, extrait les segments en utilisant l'organisation de l'image et une évaluation de la cohérence géométrique.
+
+\subsubsection{Méthodes modernes de segmentation}
+L'essor de l'apprentissage profond en vision par ordinateur a révolutionné la segmentation de données LiDAR.
+
+Les premiers travaux cherchaient à transformer l'information 3D en image ou en grille pour appliquer les méthodes utilisées sur les images RGB.
+
+PointNet~\cite{qi:cvpr:2017,qi:arxiv:2017} a permis d'évoluer vers des réseaux utilisant directement les points.
+C'est un système permettant de segmenter et classifier les données LiDAR par rapport aux classes apprises.
+
+RandLA-Net~\cite{hu:cvpr:2020} a cherché à améliorer la segmentation et la classification de la donnée en ouvrant à des nuages de points plus large, grâce notamment à un échantillonnage aléatoire de point pour réduire la donnée sans utiliser de sélection complexe.
+
+RPVNet~\cite{xu:arxiv:2021} cherche à fusionner les avantages des méthodes basées seulement sur les points, les voxels ou les distances, pour pallier aux limitations de chaque méthodes afin de segmenter et classifier les données LiDAR.
+
+Si les méthodes traditionnelles se basent principalement sur la donnée géométrique et de faibles connaissances \emph{a priori}, leur utilisation est souvent limitée à une segmentation pure, n'utilisant pas de cohérence sémantique.
+Les méthodes modernes sont principalement utilisées pour obtenir cette cohérence sémantique dans la segmentation.
+
+\subsection{Application des LiDARs en environnement industriel}
+
+La perception pour les robots mobiles autonomes en environnement industriel portent sur plusieurs aspects, allant de leur navigation à la réalisation de tâches de manipulation par exemple.
+
+\subsubsection{Navigation et cartographie}
+La principale problématique impliquée par l'intégration de robots mobiles dans un environnement dynamique est la navigation.
+Que ce soit pour évaluer le déplacement réalisé, savoir où on est dans l'environnement ou trouver son chemin au milieu des obstacles, la perception de l'environnement est un point nécessaire à l'autonomie des systèmes.
+
+SegMatch~\cite{dube:icra:2017} et SegMap~\cite{dube:rss:2018} appliquent un principe de segmentation de la donnée pour extraire ensuite des descriptions de chaque segments.
+Ces segments décrits sont ensuite comparés aux connaissances précédentes et les correspondances sont vérifiées à l'aide d'un système basé sur RANSAC pour obtenir la localisation finale dans l'environnement.
+
+\cite{wang:eecr:2023} présente un système de SLAM (Simultaneous Localisation and Mapping) utilisant des données LiDAR et basé sur le principe de réaliser une segmentation sémantique afin de détecter et filtrer les objets mobiles.
+
+
+\subsubsection{Détection et localisation d'objets}
+La détection et la localisation d'objets présente deux intérêts: la détection d'amers pouvant être nécessaire pour la cartographie ou l'évitement d'obstacle, et la localisation d'objets d'intérêts au sens de la tâche à mener pour le système autonome.
+Ce deuxième point reste encore minoritaire dans l'état de l'art de par le fort intérêt porté à la conduite autonome, demandant principalement la détection des potentiels obstacles et non l'estimation précise de la pose d'objets.
+
+On peut ainsi trouver des travaux cherchant à estimer la distance à un objet détecté comme \cite{khaled:icarce:2023} qui utilise l'information d'un LiDAR plan pour estimer la distance à une cible détectée dans une image RGB.
+
+SqueezeSeg~\cite{wu:icra:2018} projette l'information obtenue par le LiDAR sur une sphère pour obtenir une représentation sous la forme d'une grille.
+Cette forme est plus facile à adapter aux réseaux de convolution habituels.
+L'information alors transmise peut être classifiée pour extraire divers éléments d'intérêt comme les véhicules, les piétons ou les cyclistes.
+PointRCNN~\cite{shi:cvpr:2019} pré-traite les données LiDAR afin de segmenter l'information entre l'arrière plan et le premier plan, pour faciliter la détection et la classification des objets.
+
+\subsection{Défis actuels et tendances futures}
+L'utilisation de capteurs LiDAR présentent ses limites mais aussi ses avantages et défis pour les recherches futures.
+
+% \subsubsection{Embarquement des capacités}
+% La technologie LiDAR souffre à l'origine d'un poids et d'une consommation d'énergie conséquente comparée à d'autres capteurs extéroceptifs tels que les caméras.
+% Les progrès technologiques, permettant d'abord de passer à des LiDAR CMOS puis miniaturisant la technologie grâce aux MEMS, a permis aux fabriquant de produire des LiDARs plus facile à embarquer.
+% Toutefois, ces mêmes progrès ont permis d'obtenir des capteurs fournissant de plus en plus d'information.
+% Par exemple, un Ouster OS-1~\cite{ouster:os1} permet d'obtenir jusqu'à $5.2$ millions de points par seconde.
+% Afin d'obtenir un système autonome et réactif, une telle quantité de données demande d'optimiser le traitement des algorithmes ou d'améliorer les capacités de calculs.
+% De futures recherches sur les composants ou les algorithmes pourraient réduire certaines limitations ou ouvrir de nouvelles portes au LiDARs.
+
+\subsubsection{Fusion de capteurs}
+Une des tendances à l'utilisation des LiDAR est la fusion de données de sources multiples.
+Chaque capteur présentant ses avantages et ses inconvénients, fusionner leurs données est vu comme une façon de pallier aux limites des uns grâce aux autres.
+Dans la recherche pour la conduite autonome, des datasets tels que \cite{maddern:ijrr:2017} ou \cite{geiger:cvpr:2012,geiger:ijrr:2013} proposent un ensemble conséquent de données prises grâce à des capteurs embarqués.
+Ces datasets invitent souvent à l'utilisation combinée de données provenant par exemple de LiDAR, de diverses caméras ou de GPS.
+
+\subsubsection{Vers l'apprentissage profond}
+\cite{yang:arxiv:2022} recense la montée de l'intérêt vers les LiDARs 3D pour la robotique jusqu'en 2022 en observant la croissante production scientifique liée.
+En plus de ce gain d'intérêt vers l'utilisation de ces capteurs, on peut remarquer l'orientation des recherches vers les méthodes d'apprentissage profond.
+
+Si les méthodes traditionnelles ont d'abord été dominantes, l'apparition des réseaux de neurones à permis de faire évoluer les systèmes.
+D'abord utilisés pour remplacer une étape particulière d'un process traditionnel, les méthodes d'apprentissage profond permettent aujourd'hui de donner lieu à des systèmes de plus en plus performants.
+
+Toutefois, les méthodes traditionnelles n'ont pas été abandonnées et sont parfois utilisées pour réaliser des tâches maîtrisées ou soutenir les systèmes modernes.
+
+\section{Projet d'Intégration}
+
+Ce projet de recherche est axé sur un point principal qui est la perception et l'interprétation de scène pour l'autonomisation de systèmes robotiques.
+De par mon expérience doctorale à l'application de systèmes robotiques en environnement industriel, ainsi que par l'orientation des recherches du LINEACT vers l'industrie du futur, ce projet se trouve aussi axé vers l'intégration des systèmes dans un environnement industriel dynamique.
+Le projet présenté ici nécessite de mobiliser des connaissances en robotique et en perception LiDAR.
+
+Ce projet vise à étudier l'intérêt des LiDARs dans les applications robotiques autonomes en environnement industriel, en mettant en avant la nécessité de segmenter la donnée au plus près du capteur pour optimiser les utilisations futures de l'information.
+
+\subsection{Perception et interprétation de scène}
+Une des problématiques traitées dans mes recherches précédentes concernait la localisation d'objets en utilisant des données LiDAR et des méthodes traditionnelles pour la description globale et l'estimation de correspondance entre un modèle et une mesure.
+Si les expériences menées sur la localisation du robot dans son environnement ont montré l'intérêt du filtrage de l'information, celles traitant de la localisation d'objets, ont mis en évidence l'importance de la segmentation de la donnée pour faciliter la comparaison à un modèle, qu'elle passe par des systèmes de description ou de l'estimation de pose par réalignement.
+
+Je souhaite donc explorer les problématiques de segmentation de données LiDAR en utilisant dans un premier temps des méthodes traditionnelles, pouvant par exemple combiner l'intensité de l'information et les informations géométriques.
+Par la suite, je souhaite ouvrir la problématique aux méthodologies modernes d'apprentissage.
+
+Cette segmentation pourra ainsi être utilisée comme support à la classification sémantique de l'information.
+Cette classification permettrait ainsi de pouvoir filtrer l'information, pour par exemple trier l'information statique pour être utilisé comme référence pour la navigation, ou de pouvoir actualiser les informations dynamiques d'une carte de l'environnement.
+
+Cette segmentation basée LiDAR peut s'ouvrir à de la fusion multi-capteurs, en utilisant le LiDAR pour complémenter des informations de caméras RGB, ou inversement.
+Cette fusion permet de combler des manques d'une information visuelle ou géométrique par l'apport de l'information complémentaire.
+
+\subsection{Vers les capteurs intelligents}
+
+Une des problématiques soulevées par les systèmes autonomes concerne l'embarquement des solutions.
+Les systèmes autonomes et robotiques peuvent présenter des contraintes d'encombrement volumique, de consommation énergétique ou de poids.
+Le développement des systèmes de perception apporte des capteurs fournissant une information plus dense et plus détaillée.
+Cette amélioration de l'information disponible, couplée à la recherche de performance dans les algorithmes implique une consommation énergétique grandissante ou la demande de plateformes de calculs plus complexes.
+Mes travaux de recherches précédents étaient axés sur la résolution d'un problème de perception tel que la localisation du robot ou la perception du sol.
+La complexité et le coût combinatoire des algorithmes implémentés rendent difficile leur intégration combinée sur la plateforme robotique disponible.
+
+Aujourd'hui, il est usuel d'utiliser des plateformes de calculs déportées pour réaliser certains traitement aussi bien pour le contrôle de haut niveau que pour la perception.
+Cette utilisation de plateformes déportées apporte d'autres problématiques, notamment de délai de transmission et de sécurité de l'information.
+
+Des recherches sont toutefois menées depuis plusieurs années pour embarquer les algorithmes dans des plateformes adaptées.
+Ces recherches œuvrent à mettre en adéquation les besoins du système, les capacités de calcul, les capteurs et les algorithmes.
+
+Il peut être intéressant à long terme d'axer une partie de la recherche en entrant cette problématique d'embarquabilité.
+Cette problématique peut être par exemple traitée sur la frugalité des algorithmes ou l'intégration de systèmes de pré-traitement sur les capteurs.
+Le projet actuellement présenté ne prends pas cette problématique en considération forte mais elle pourra être intégré dans un premier temps par des questions de frugalité des algorithmes.
+
+\subsection{Intégration au laboratoire}
+
+Ce projet s'intègre dans les recherches du laboratoire LINEACT et particulièrement dans le Thème 2 ``Ingénierie et Outils Numériques''.
+Dans ce thème, les recherches s'orienteraient vers l'Axe 1 ``Cyber Physical Production System''.
+
+Concernant le plan d'évolution, il se doit d'être croissant.
+Sur un jalon à 6 mois, je prévois de prendre en main les outils déjà utilisés sur ces problématiques dans le laboratoire, ainsi que de travailler sur la segmentation de données LiDAR en utilisant des méthodes traditionnelles.
+Par la suite, dans un délai de 9 à 12 mois, j'ouvrirais ces problématiques à l'utilisation de méthodes modernes, par exemple basé sur PointNet~\cite{qi:cvpr:2017}.
+Les résultats de ces phases pourraient faire l'objet d'une soumission à des conférences telles que \emph{IEEE International Conference on Robotics and Automation (ICRA)} ou \emph{IEEE International Conference on Intelligent Robots and Systems (IROS)}.
+
+Après un an, je prévois de porter l'utilisation de la segmentation obtenue à la résolution de problématiques telles que la localisation d'objets, l'actualisation de cartes ou la navigation.
+Cette utilisation pourra par exemple être sous forme de pré-filtrage de la donnée en utilisant une classification sémantique des segments.
+Les travaux aboutis à cette étape pourraient potentiellement être soumis à des publications dans des journaux tels que \emph{IEEE Robotics and Automation Letters}, \emph{Autonomous Robots} ou \emph{Robotics and Autonomous Systems}.
+
+Au sein de cet axe, ce projet rejoint les recherches menées actuellement par Ilyass Abouelaziz et Youssef Mourchid sur l'utilisation de données 3D et son filtrage.
+Leur récente publication \cite{abouelaziz:arxiv:2024} est notamment intéressante pour les aspects de filtrage de la donnée 3D et la segmentation des éléments présents.
+
+On peut aussi noter les travaux de Hiba Al Assaad et Yohan Dupuis concernant la cartographie sémantique collaborative de l'environnement.
+Leur publication \cite{achour:as:2022} permet notamment d'avoir une vue globale des problématiques liées à la cartographie sémantique collaborative et de l'état de l'art actuel.
+De plus, \cite{achour:gretsi:2023} présente une méthodologie pour générer des formes 2D pour la cartographie sémantique en utilisant des données acquises par des caméras RGBD.
+Cette publication est notamment intéressante pour son utilisation de données RGBD pour classifier les objets rencontrés.
+La combinaison avec des données LiDAR pourrait permettre d'améliorer la précision de l'information obtenue pour la classification.
+
+\vspace{0.5cm}
+
+\newpage
+\printbibliography
+
+% \makeletterclosing
+
+\end{document}
+
+
+%% end of file `template.tex'.

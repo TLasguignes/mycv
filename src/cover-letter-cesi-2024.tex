@@ -1,0 +1,77 @@
+
+\documentclass[10pt, a4paper, roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\usepackage[french]{babel}
+
+
+% moderncv themes
+\moderncvstyle{classic}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                              % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% To justify the text (add command \justifying to justify left and right)
+\usepackage{ragged2e}
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\name{Thibaud}{Lasguignes}
+\title{Docteur en robotique humano\"ide et vision par ordinateur}            % optional, remove / comment the line if not wanted
+\address{2 All\'ee Elise Deroche}{R\'esidence Lindbergh, G2-202}{31400 Toulouse} % optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\phone[mobile]{+33~(6)~26~36~28~13}                   % optional, remove / comment the line if not wanted
+% \phone[fixed]{+2~(345)~678~901}                     % optional, remove / comment the line if not wanted
+% \phone[fax]{+3~(456)~789~012}                       % optional, remove / comment the line if not wanted
+\email{thibaud.lasguignes@sfr.fr}                     % optional, remove / comment the line if not wanted
+\social[github]{TLasguignes}
+\social[linkedin]{thibaud-lasguignes}
+% \homepage{www.johndoe.com}                          % optional, remove / comment the line if not wanted
+% \photo[4cm]{./photo_2023.jpg}                % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \quote{Some quote}                                  % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%-----       letter       ---------------------------------------------------------
+% recipient data
+% \recipient{Destinataire}{Département, Entreprise}
+\date{\today}
+\opening{Madame, Monsieur,}
+\closing{Je vous remercie par avance de l'intérêt que vous portez à ma candidature et vous adresse mes sincères salutations.}
+% \enclosure[Adjunto]{CV}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+\makelettertitle
+\justifying
+Actuellement Attaché Temporaire d'Enseignement et de Recherche (ATER) au sein de l'INSA Toulouse, rattaché au LAAS-CNRS et titulaire d'un Doctorat en Robotique ainsi que d'une qualification au corps de Maître de Conférence (section CNU 61), je vous adresse aujourd'hui ma candidature pour le poste d'Enseignant-Chercheur au sein du CESI sur le campus de Toulouse. Je suis particulièrement intéressé par cette opportunité qui correspond à mes aspirations professionnelles.
+
+Mes recherches, menées dans le cadre de mon doctorat et de mon ATER, portent sur la résolution des problèmes de perception pour un robot humanoïde évoluant en environnement industriel en utilisant des données LiDAR. Ces travaux m'ont permis d'acquérir et de développer des compétences en traitement de données 3D, en fusion de capteurs et en robotique. De plus, j'ai eu l'opportunité de participer à l'enseignement au sein de l'INSA Toulouse et à l'Université Paul Sabatier. Ces expériences m'ont permis d'améliorer mes connaissances en pédagogie et de mieux transmettre les savoirs que j'ai acquis au fil de ma formation et solidifié par la suite. Ces compétences, couplées à ma passion pour la recherche et l'enseignement, me permettront de mener des projets de recherche ambitieux tout en transmettant mes connaissances aux étudiants avec pédagogie et engagement.
+
+Mon parcours m'a également permis de participer à des projets industriels et européens, me permettant d'acquérir une compréhension approfondie des besoins d'interaction entre les établissements de recherches, les établissements de formation et les industriels.
+
+De plus, mes expériences en enseignement m'ont sensibilisé aux besoins des étudiants en situation de handicap et à l'importance des pédagogies innovantes et adaptées. J'ai notamment constaté l'importance d'apporter un aspect pratique et concret à l'enseignement et me suis efforcé de renforcer la dimension pratique dans les cours dont j'étais responsable.
+
+Intégrer votre établissement serait pour moi l'opportunité de contribuer activement à la progression scientifique et au transfert de connaissances aux futurs ingénieurs. Je suis particulièrement attiré par l'approche pédagogique par projets appliquée dans votre établissement, ainsi que par l'opportunité d'effectuer les recherches en lien direct avec les acteurs professionnels. Je suis convaincu que mes compétences et mon engagement seraient un atout pour votre équipe et vos étudiants.
+
+\vspace{0.5cm}
+
+
+\makeletterclosing
+
+\end{document}
+
+
+%% end of file `template.tex'.
