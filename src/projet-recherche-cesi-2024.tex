@@ -9,7 +9,7 @@
 % adjust the page margins
 \usepackage[scale=0.75]{geometry}
 
-\usepackage[citestyle=numeric,mincitenames=1,maxcitenames=1,bibstyle=ieee,backend=bibtex8]{biblatex}
+\usepackage[citestyle=numeric,mincitenames=1,maxcitenames=1,bibstyle=ieee,backend=bibtex8,dashed=false]{biblatex}
 \addbibresource{projet.bib}
 \AtEveryBibitem{
     \clearfield{doi}
@@ -18,6 +18,9 @@
     \clearfield{note}
     \clearfield{issn}
 }
+% Pour éviter le "---" en cas de citation suivie d'articles des mêmes auteurs
+\AtEveryCitekey{\ifciteseen{}{\defcounter{maxnames}{99}}}
+\AtEveryBibitem{\ifentryseen{}{\defcounter{maxnames}{99}}}
 
 \usepackage{SIunits}
 \usepackage{enumitem,amssymb}
@@ -106,7 +109,7 @@
 %     \item Etat de l’art qui met en avant les manques et les apports que votre projet scientifique pourra faire.
 %     \item Question(s) de recherche soulevée(s) : c’est un point très important. Evitez de multiplier les questions de recherche et concentrer vous sur 1 voire 2 questions maximum en lien avec l’état de l’art.
 %     \item[\done] Plan d’action sur 3 ans avec un focus sur les jalons à 6 mois/ 1an et 3 ans.
-%     \item[\done] 1 ou 2 chercheurs identifiés au sein de Lineact avec lesquels vous pourriez collaborer et comparer quelques publications (1 à 2) de ces chercheurs avec le projet proposé.
+%     \item[\done] 1 ou 2 chercheurs identifiés au sein de CESI-LINEACT avec lesquels vous pourriez collaborer et comparer quelques publications (1 à 2) de ces chercheurs avec le projet proposé.
 %     \item[\done] Le projet devra être concentré sur 5 pages maximum et les références bibliographiques peuvent éventuellement figurer en annexe.
 %   \end{todolist}
 % \end{itemize}
@@ -141,7 +144,7 @@ Ainsi, la cartographie tend de plus en plus vers des modèles sémantiques qui j
 Il existe deux choix habituels en terme de capteurs visuels pour des applications robotiques : Les caméras et les LiDAR.
 \cite{barros::2021} présente les avantages et les inconvénients de ces capteurs, en ciblant particulièrement sur les problématiques de reconnaissance de lieu.
 Par exemple, les caméras présentent un champ de vision limité, alors que les LiDARs disponibles aujourd'hui permettent d'obtenir une vue à $360\degree$ sans distorsion sur un axe.
-Toutefois, en terme de coût et de consommation d'énergie, les caméras ont souvent l'avantage.
+Toutefois, en termes de coût et de consommation d'énergie, les caméras ont souvent l'avantage.
 Il en ressort que l'environnement cible doit être pris en compte pour le choix des capteurs, puisque les caméras sont plus dépendantes des textures visuelles, au contraire des LiDAR qui s'appuient majoritairement sur les matériaux.
 D'autres capteurs compensent la dépendance des caméras monoculaires RGB à l'égard des textures visuelles en produisant des informations sur la profondeur, soit avec la stéréovision, soit avec un projecteur et des caméras infrarouges.
 Cependant, ces informations sur la profondeur sont moins précises que celles d'un LiDAR.
@@ -149,7 +152,7 @@ Avec l'évolution des technologies, et en particulier les progrès des Systèmes
 \cite{yang:arxiv:2022} montre l'intérêt porté aux LiDARs 3D en robotique par leur diversité de champ d'application et la quantité grandissante de fabriquant et de publications liées à ces capteurs.
 
 \subsection{Segmentation de données LiDAR}
-L'objectif de la segmentation et des diviser la données en segments.
+L'objectif de la segmentation et de diviser les données en segments.
 Selon l'information et la méthode, ces segments peuvent être des amers géométriques, des objets ou des parties de la scène.
 La segmentation de données LiDAR est un challenge car la donnée est généralement éparse et non organisée.
 Toutefois, certaines méthodes trouvent une organisation dans la donnée 3D en utilisant la mécanique du capteur.
@@ -163,7 +166,7 @@ Les approches traditionnelles, comme DBSCAN~\cite{ester:ickddm:1996} ou la segme
 Les méthodes basées sur DBSCAN utilisent la densité de l'information pour diviser les segments.
 D'autres méthodes regroupent les points par leur proximité géométriques comme l'euclidean clustering~\cite{rusu:these:2009}.
 
-D'autres méthodes souvent utilisée reviennent à faire correspondre un modèle géométrique aux données basées sur la transformée de Hough~\cite{hough::1962} ou RANSAC~\cite{fischler:acm:1981}.
+D'autres méthodes souvent utilisées reviennent à faire correspondre un modèle géométrique aux données basées sur la transformée de Hough~\cite{hough::1962} ou RANSAC~\cite{fischler:acm:1981}.
 
 De nombreuses méthodes cherchent d'abord à retirer le sol de la donnée afin de faciliter la séparation des segments en suivant.
 \cite{zermas:icra:2017} présente une méthode de segmentation de donnée LiDAR rapide mais appliquée spécifiquement au domaine du véhicule autonome.
@@ -178,22 +181,22 @@ Les premiers travaux cherchaient à transformer l'information 3D en image ou en 
 PointNet~\cite{qi:cvpr:2017,qi:arxiv:2017} a permis d'évoluer vers des réseaux utilisant directement les points.
 C'est un système permettant de segmenter et classifier les données LiDAR par rapport aux classes apprises.
 
-RandLA-Net~\cite{hu:cvpr:2020} a cherché à améliorer la segmentation et la classification de la donnée en ouvrant à des nuages de points plus large, grâce notamment à un échantillonnage aléatoire de point pour réduire la donnée sans utiliser de sélection complexe.
+RandLA-Net~\cite{hu:cvpr:2020} a cherché à améliorer la segmentation et la classification de la donnée en ouvrant à des nuages de points plus larges, grâce notamment à un échantillonnage aléatoire de point pour réduire la donnée sans utiliser de sélection complexe.
 
-RPVNet~\cite{xu:arxiv:2021} cherche à fusionner les avantages des méthodes basées seulement sur les points, les voxels ou les distances, pour pallier aux limitations de chaque méthodes afin de segmenter et classifier les données LiDAR.
+RPVNet~\cite{xu:arxiv:2021} cherche à fusionner les avantages des méthodes basées seulement sur les points, les voxels ou les distances, pour pallier aux limitations de chaque méthode afin de segmenter et classifier les données LiDAR.
 
 Si les méthodes traditionnelles se basent principalement sur la donnée géométrique et de faibles connaissances \emph{a priori}, leur utilisation est souvent limitée à une segmentation pure, n'utilisant pas de cohérence sémantique.
 Les méthodes modernes sont principalement utilisées pour obtenir cette cohérence sémantique dans la segmentation.
 
 \subsection{Application des LiDARs en environnement industriel}
 
-La perception pour les robots mobiles autonomes en environnement industriel portent sur plusieurs aspects, allant de leur navigation à la réalisation de tâches de manipulation par exemple.
+La perception pour les robots mobiles autonomes en environnement industriel porte sur plusieurs aspects, allant de leur navigation à la réalisation de tâches de manipulation par exemple.
 
 \subsubsection{Navigation et cartographie}
 La principale problématique impliquée par l'intégration de robots mobiles dans un environnement dynamique est la navigation.
 Que ce soit pour évaluer le déplacement réalisé, savoir où on est dans l'environnement ou trouver son chemin au milieu des obstacles, la perception de l'environnement est un point nécessaire à l'autonomie des systèmes.
 
-SegMatch~\cite{dube:icra:2017} et SegMap~\cite{dube:rss:2018} appliquent un principe de segmentation de la donnée pour extraire ensuite des descriptions de chaque segments.
+SegMatch~\cite{dube:icra:2017} et SegMap~\cite{dube:rss:2018} appliquent un principe de segmentation de la donnée pour extraire ensuite des descriptions de chaque segment.
 Ces segments décrits sont ensuite comparés aux connaissances précédentes et les correspondances sont vérifiées à l'aide d'un système basé sur RANSAC pour obtenir la localisation finale dans l'environnement.
 
 \cite{wang:eecr:2023} présente un système de SLAM (Simultaneous Localisation and Mapping) utilisant des données LiDAR et basé sur le principe de réaliser une segmentation sémantique afin de détecter et filtrer les objets mobiles.
@@ -231,18 +234,18 @@ Ces datasets invitent souvent à l'utilisation combinée de données provenant p
 \cite{yang:arxiv:2022} recense la montée de l'intérêt vers les LiDARs 3D pour la robotique jusqu'en 2022 en observant la croissante production scientifique liée.
 En plus de ce gain d'intérêt vers l'utilisation de ces capteurs, on peut remarquer l'orientation des recherches vers les méthodes d'apprentissage profond.
 
-Si les méthodes traditionnelles ont d'abord été dominantes, l'apparition des réseaux de neurones à permis de faire évoluer les systèmes.
-D'abord utilisés pour remplacer une étape particulière d'un process traditionnel, les méthodes d'apprentissage profond permettent aujourd'hui de donner lieu à des systèmes de plus en plus performants.
+Si les méthodes traditionnelles ont d'abord été dominantes, l'apparition des réseaux de neurones a permis de faire évoluer les systèmes.
+D'abord utilisées pour remplacer une étape particulière d'un process traditionnel, les méthodes d'apprentissage profond permettent aujourd'hui de donner lieu à des systèmes de plus en plus performants.
 
 Toutefois, les méthodes traditionnelles n'ont pas été abandonnées et sont parfois utilisées pour réaliser des tâches maîtrisées ou soutenir les systèmes modernes.
 
 \section{Projet d'Intégration}
 
 Ce projet de recherche est axé sur un point principal qui est la perception et l'interprétation de scène pour l'autonomisation de systèmes robotiques.
-De par mon expérience doctorale à l'application de systèmes robotiques en environnement industriel, ainsi que par l'orientation des recherches du LINEACT vers l'industrie du futur, ce projet se trouve aussi axé vers l'intégration des systèmes dans un environnement industriel dynamique.
-Le projet présenté ici nécessite de mobiliser des connaissances en robotique et en perception LiDAR.
+De par mon expérience doctorale à l'application de systèmes robotiques en environnement industriel, ainsi que par l'orientation des recherches du CESI-LINEACT vers l'industrie du futur au sein de la thématique Systèmes Cyber Physiques, ce projet se trouve aussi axé vers l'intégration des systèmes dans un environnement industriel dynamique.
+Le projet présenté ici nécessite de mobiliser des connaissances en robotique et en perception LiDAR et cherchera à répondre à la question suivante :
 
-Ce projet vise à étudier l'intérêt des LiDARs dans les applications robotiques autonomes en environnement industriel, en mettant en avant la nécessité de segmenter la donnée au plus près du capteur pour optimiser les utilisations futures de l'information.
+Comment la segmentation des données LiDAR, effectuée au plus près du capteur, peut elle améliorer la navigation autonome des robots dans un environnement industriel ?
 
 \subsection{Perception et interprétation de scène}
 Une des problématiques traitées dans mes recherches précédentes concernait la localisation d'objets en utilisant des données LiDAR et des méthodes traditionnelles pour la description globale et l'estimation de correspondance entre un modèle et une mesure.
@@ -278,13 +281,20 @@ Le projet actuellement présenté ne prends pas cette problématique en considé
 
 \subsection{Intégration au laboratoire}
 
-Ce projet s'intègre dans les recherches du laboratoire LINEACT et particulièrement dans le Thème 2 ``Ingénierie et Outils Numériques''.
+Ce projet s'intègre dans les recherches du laboratoire CESI-LINEACT et particulièrement dans le Thème 2 ``Ingénierie et Outils Numériques''.
 Dans ce thème, les recherches s'orienteraient vers l'Axe 1 ``Cyber Physical Production System''.
 
 Concernant le plan d'évolution, il se doit d'être croissant.
-Sur un jalon à 6 mois, je prévois de prendre en main les outils déjà utilisés sur ces problématiques dans le laboratoire, ainsi que de travailler sur la segmentation de données LiDAR en utilisant des méthodes traditionnelles.
-Par la suite, dans un délai de 9 à 12 mois, j'ouvrirais ces problématiques à l'utilisation de méthodes modernes, par exemple basé sur PointNet~\cite{qi:cvpr:2017}.
-Les résultats de ces phases pourraient faire l'objet d'une soumission à des conférences telles que \emph{IEEE International Conference on Robotics and Automation (ICRA)} ou \emph{IEEE International Conference on Intelligent Robots and Systems (IROS)}.
+
+Pour les $3$ premiers mois, je prévois de prendre en main les outils utilisés au CESI-LINEACT en robotique et sur l'utilisation de LiDARs.
+
+Sur un jalon à 6 mois, je souhaite travailler sur la segmentation de données LiDAR en utilisant des méthodes traditionnelles.
+Il sera nécessaire, dans un premier temps, d'étudier et d'implémenter les méthodes traditionnelles de l'état de l'art.
+L'application de cette étude sur un ensemble de données LiDAR permettra d'évaluer les limitations de ces méthodes, afin de proposer et tester des améliorations susceptibles d'en optimiser les performances.
+
+Par la suite, dans un délai de 9 à 12 mois, j'ouvrirai ces recherches à l'utilisation de méthodes modernes, tells que celles basées sur PointNet~\cite{qi:cvpr:2017}.
+Cette étape consistera à implémenter ces approches afin comparer leurs performances avec les méthodes traditionnelles, tout en tenant compte des améliorations proposées.
+Les résultats de ces premières phases pourraient faire l'objet d'une soumission à des conférences telles que \emph{IEEE International Conference on Robotics and Automation (ICRA)} ou \emph{IEEE International Conference on Intelligent Robots and Systems (IROS)}.
 
 Après un an, je prévois de porter l'utilisation de la segmentation obtenue à la résolution de problématiques telles que la localisation d'objets, l'actualisation de cartes ou la navigation.
 Cette utilisation pourra par exemple être sous forme de pré-filtrage de la donnée en utilisant une classification sémantique des segments.
